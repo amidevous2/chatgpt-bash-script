@@ -633,7 +633,6 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
                             ;;
 
                         *" debian "*|*" ubuntu "*")
-
                             OS_FAMILY="debian"
 
                             ;;
