@@ -625,48 +625,35 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
                 if [ -n "$ID_LIKE" ]; then
 
                     case " $ID_LIKE " in
-
+                    
                         *" rhel "*|*" centos "*|*" fedora "*")
-
                             OS_FAMILY="rhel"
-
                             ;;
-
+                    
                         *" debian "*|*" ubuntu "*")
                             OS_FAMILY="debian"
-
                             ;;
-
+                    
                         *" arch "*)
-
                             OS_FAMILY="arch"
-
                             ;;
-
+                    
                         *" suse "*)
-
                             OS_FAMILY="suse"
-
                             ;;
-
-                        *" gentoo "*)
-
+                    
+                         *" gentoo "*)
                             OS_FAMILY="gentoo"
-
                             ;;
-
+                    
                         *" alpine "*)
-
                             OS_FAMILY="alpine"
-
                             ;;
-
-                        *)
-
+                    
+                            *)
                             OS_FAMILY="$OS_ID"
-
                             ;;
-
+                    
                     esac
 
                 else
