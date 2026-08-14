@@ -1,6 +1,7 @@
 # AlmaLinux-10 podman command
 
 ```
+commit=master
 eval "$(if command -v curl >/dev/null 2>&1; then
     curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-10.sh"
 elif command -v wget >/dev/null 2>&1; then
