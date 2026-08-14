@@ -1,5 +1,5 @@
 #AlmaLinux-10.Dockerfile
-FROM hub.docker.com/almalinux/10-minimal
+FROM docker.io/library/almalinux/10-minimal
 
 # install AlmaLinux Core + activate repo EPEL and Remi (for php)
 
