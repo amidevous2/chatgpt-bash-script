@@ -1,3 +1,4 @@
+#Fedora-42.Dockerfile
 FROM fedora:42
 RUN dnf -y update && \
     dnf -y install bash curl wget @core && \
