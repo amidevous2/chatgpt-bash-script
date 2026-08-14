@@ -2,9 +2,9 @@
 FROM fedora:42
 RUN dnf -y update && \
     dnf -y install bash curl wget @core && \
-    dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-                   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && \
-    dnf install -y https://rpms.remirepo.net/fedora/remi-release-$(rpm -E %fedora).rpm && \
+    dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm \
+                   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm && \
+    dnf install -y https://rpms.remirepo.net/fedora/remi-release-42.rpm && \
     dnf clean all
 
 CMD ["/bin/bash"]
