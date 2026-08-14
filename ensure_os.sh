@@ -750,6 +750,22 @@ export OS_ARCH
 export OS_ENVIRONMENT
 
 # ============================================================
+# Echo
+# ============================================================
+
+echo $OS
+echo $OS_ID
+echo $OS_VERSION
+echo $OS_MAJOR
+echo $OS_MINOR
+echo $OS_PATCH
+echo $OS_FAMILY
+echo $OS_KERNEL
+echo $OS_KERNEL_VERSION
+echo $OS_ARCH
+echo $OS_ENVIRONMENT
+
+# ============================================================
 # End
 # Created with care by ChatGPT - GPT-5.6 Luna
 # ============================================================
