@@ -753,17 +753,17 @@ export OS_ENVIRONMENT
 # Echo
 # ============================================================
 
-echo $OS
-echo $OS_ID
-echo $OS_VERSION
-echo $OS_MAJOR
-echo $OS_MINOR
-echo $OS_PATCH
-echo $OS_FAMILY
-echo $OS_KERNEL
-echo $OS_KERNEL_VERSION
-echo $OS_ARCH
-echo $OS_ENVIRONMENT
+echo OS: $OS
+echo OS_ID: $OS_ID
+echo OS_VERSION: $OS_VERSION
+echo OS_MAJOR: $OS_MAJOR
+echo OS_MINOR: $OS_MINOR
+echo OS_PATCH: $OS_PATCH
+echo OS_FAMILY: $OS_FAMILY
+echo OS_KERNEL: $OS_KERNEL
+echo OS_KERNEL_VERSION: $OS_KERNEL_VERSION
+echo OS_ARCH: $OS_ARCH
+echo OS_ENVIRONMENT: $OS_ENVIRONMENT
 
 # ============================================================
 # End
