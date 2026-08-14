@@ -7,7 +7,7 @@ podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
 
-wget https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Fedora-44.Dockerfile
+wget https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Fedora/Fedora-44.Dockerfile
 chmod 777 Fedora-44.Dockerfile
 # Compiler l'image depuis le template Fedora 44
 podman build -t test-fedora44 -f Fedora-44.Dockerfile .
