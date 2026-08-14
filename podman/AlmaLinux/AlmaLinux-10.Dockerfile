@@ -14,4 +14,5 @@ RUN dnf -y update && \
     dnf install -y https://rpms.remirepo.net/enterprise/remi-release-10.rpm && \
     dnf clean all
 
-CMD ["/bin/bash"]
+CMD ["/bin/bash"] 
+##
