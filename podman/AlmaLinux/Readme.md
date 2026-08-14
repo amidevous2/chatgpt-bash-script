@@ -1,11 +1,11 @@
 # AlmaLinux-10 podman command
 
 ```
-commit=master
+commit=main
 eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-10.sh"
+    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$commit/podman/AlmaLinux/AlmaLinux-10.sh"
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-10.sh"
+    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$commit/podman/AlmaLinux/AlmaLinux-10.sh"
 fi)"
 
 ```
