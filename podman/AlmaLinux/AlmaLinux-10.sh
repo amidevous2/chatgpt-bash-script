@@ -1,6 +1,6 @@
 #!/bin/bash
 # Almalinux-10.sh
-commit=4335e9796a0521db7fc5a0374ed908fb6cc4fb09
+commit=fd2583348487331bc90162ef55cb1be2e519c5d4
 # Purge Podman avant utilisation
 podman stop -a 2>/dev/null || true
 podman rm -a -f 2>/dev/null || true
