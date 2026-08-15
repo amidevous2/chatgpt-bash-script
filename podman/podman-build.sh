@@ -87,11 +87,13 @@ else
 
     echo "Construction de $IMAGE_NAME..."
     podman build -t "$IMAGE_NAME" -f "$DOCKERFILE" .
+    echo "BUILD TERMINÉ"
 
     mkdir -p "$HOME/podman-template/"
 
     echo "Sauvegarde de l'image..."
     podman save "localhost/$IMAGE_NAME" | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
+    echo "sauvegarde TERMINÉ"
 
     rm -f "$DOCKERFILE"
 
