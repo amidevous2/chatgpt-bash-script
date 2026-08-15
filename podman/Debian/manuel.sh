@@ -8,6 +8,9 @@ podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
 
+
+#debootstrap --variant=minbase bookworm $PWD/rootfs http://deb.debian.org/debian
+#mock -r alma+epel-10-x86_64 --rootdir $PWD/rootfs --init
 wget https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/manuel.Dockerfile
 chmod 777 manuel.Dockerfile
 podman build -t test-debian-11 -f manuel.Dockerfile .
