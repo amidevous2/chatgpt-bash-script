@@ -1,6 +1,6 @@
 #AlmaLinux-10.Dockerfile
 #commit=7102a3493b1b2c38ba7901e2665ba3626a0a1623
-FROM almalinux/10-minimal:10.2 
+FROM docker.io/almalinux:10.2
 
 
 RUN dnf -y remove coreutils-single
