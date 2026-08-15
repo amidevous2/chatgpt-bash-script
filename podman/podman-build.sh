@@ -1,6 +1,15 @@
 #!/bin/bash
 # podman-build.sh
+if ! command -v jq >/dev/null 2>&1; then
+    echo "Erreur : jq n'est pas installé."
+    echo "Installez jq puis relancez le script."
+    exit 1
+fi
+if command -v curl >/dev/null 2>&1; then
 COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+elif command -v wget >/dev/null 2>&1; then
+COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+fi
 
 DISTRIBUTION=""
 VERSION=""
