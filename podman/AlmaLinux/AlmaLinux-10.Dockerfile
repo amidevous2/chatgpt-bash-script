@@ -1,5 +1,5 @@
 #AlmaLinux-10.Dockerfile
-#commit=86cbb1facf4dd2de8e27ae856641834cb9cbdc0186cbb1facf4dd2de8e27ae856641834cb9cbdc01
+#commit=a55e95cec8a7de3b3f6cf0dec1205ef2aaf045c2
 FROM docker.io/library/almalinux:10.2
 RUN dnf -y swap coreutils-single coreutils
 RUN dnf -y update
