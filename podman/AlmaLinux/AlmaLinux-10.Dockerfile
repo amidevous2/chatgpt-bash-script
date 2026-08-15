@@ -1,9 +1,10 @@
 #AlmaLinux-10.Dockerfile
-FROM almalinux/10-minimal:10.2
+#commit=8e309e83a8ce8a1f750c122e8b9fcce4925461f5
+FROM almalinux/10-minimal:10.2 
 
-# install AlmaLinux Core + activate repo EPEL and Remi (for php)
 
-RUN dnf -y remove coreutils-single && \
+RUN dnf -y remove coreutils-single
+RUN dnf -y update
     dnf -y update && \
     dnf -y install bash curl wget @core && \
     dnf -y install epel-release && \
