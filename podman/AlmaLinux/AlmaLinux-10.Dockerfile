@@ -1,20 +1,17 @@
 #AlmaLinux-10.Dockerfile
 #commit=38026d5dc395588ccf375648976db51356d66a59
-FROM docker.io/almalinux:10.2
-
-
-RUN dnf -y remove coreutils-single
+FROM docker.io/library/almalinux:10.2
+RUN dnf -y swap coreutils-single coreutils
 RUN dnf -y update
 RUN dnf -y install bash curl wget @core
 RUN dnf -y install epel-release
-RUN dnf -y install update
 RUN /usr/bin/crb enable
-RUN dnf -y install update
-RUN dnf -y install https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-10.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-10.noarch.rpm
-RUN dnf -y install update
-RUN dnf install -y https://rpms.remirepo.net/enterprise/remi-release-10.rpm
+RUN dnf -y install \
+    https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-10.noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-10.noarch.rpm
+RUN dnf -y install \
+    https://rpms.remirepo.net/enterprise/remi-release-10.rpm
 RUN dnf clean all
 
-
-CMD ["/bin/bash"] 
+CMD ["/bin/bash"]
 ####
