@@ -24,8 +24,12 @@ while [[ $# -gt 0 ]]; do
             VERSION="$2"
             shift 2
             ;;
+        --architecture)
+            ARCHITECTURE="$2"
+            shift 2
+            ;;
         --help|-h)
-            echo "Usage: $0 --distribution <distribution> --version <version>"
+            echo "Usage: $0 --distribution <distribution> --version <version> [--architecture <architecture>]"
             exit 0
             ;;
         *)
@@ -40,9 +44,17 @@ if [ -z "$DISTRIBUTION" ] || [ -z "$VERSION" ]; then
     exit 1
 fi
 
-echo "Distribution : $DISTRIBUTION"
-echo "Version      : $VERSION"
-IMAGE_NAME="${DISTRIBUTION,,}${VERSION}"
+
+if [ -z "$ARCHITECTURE" ]; then
+    DOCKERFILE="$DISTRIBUTION-$VERSION.Dockerfile"
+    TEMPLATE="$DISTRIBUTION-$VERSION.tar.xz"
+    IMAGE_NAME="${DISTRIBUTION,,}${VERSION}"
+else
+    DOCKERFILE="$DISTRIBUTION-$VERSION-$ARCHITECTURE.Dockerfile"
+    TEMPLATE="$DISTRIBUTION-$VERSION-$ARCHITECTURE.tar.xz"
+    IMAGE_NAME="${DISTRIBUTION,,}${VERSION}${ARCHITECTURE}"
+fi
+
 
 # Purge Podman avant utilisation
 podman stop -a 2>/dev/null || true
@@ -50,26 +62,26 @@ podman rm -a -f 2>/dev/null || true
 podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
-if [ -f "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz" ]; then
-xz -dc "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz" | podman load
+if [ -f "$HOME/podman-template/$TEMPLATE" ]; then
+xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
 podman run --rm -it localhost/$DISTRIBUTION:$VERSION /bin/bash
 else
 if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DISTRIBUTION-$VERSION.Dockerfile" -o "$DISTRIBUTION-$VERSION.Dockerfile"
+    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE" -o "$DOCKERFILE"
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO "$DISTRIBUTION-$VERSION.Dockerfile" "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DISTRIBUTION-$VERSION.Dockerfile"
+    wget -qO "$DISTRIBUTION-$VERSION.Dockerfile" "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE"
 fi
-chmod 777 "$DISTRIBUTION-$VERSION.Dockerfile"
-podman build -t $IMAGE_NAME -f $DISTRIBUTION-$VERSION.Dockerfile .
+chmod 777 "$DOCKERFILE"
+podman build -t $IMAGE_NAME -f "$DOCKERFILE" .
 mkdir -p "$HOME/podman-template/"
-podman save localhost/$IMAGE_NAME;latest | xz -T0 -9 > "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz"
-rm -f $DISTRIBUTION-$VERSION.Dockerfile
+podman save localhost/$IMAGE_NAME;latest | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
+rm -f "$DOCKERFILE"
 podman stop -a 2>/dev/null || true
 podman rm -a -f 2>/dev/null || true
 podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
-xz -dc "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz" | podman load
+xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
 podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash
 fi
 
