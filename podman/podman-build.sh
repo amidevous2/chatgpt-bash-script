@@ -107,7 +107,10 @@ else
     podman system prune -a -f --volumes
 
     echo "Rechargement du template..."
-    xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
+    cp "$HOME/podman-template/$TEMPLATE" "$HOME/podman-template/$TEMPLATE.save"
+    xz -d "$HOME/podman-template/$TEMPLATE"
+    podman load -i "${HOME}/podman-template/${TEMPLATE%.xz}"
+    mv "$HOME/podman-template/$TEMPLATE.save" "$HOME/podman-template/$TEMPLATE"
 
     echo "Template rechargé."
     echo "Lancement de $IMAGE_NAME..."
