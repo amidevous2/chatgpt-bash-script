@@ -92,7 +92,9 @@ else
     mkdir -p "$HOME/podman-template/"
 
     echo "Sauvegarde de l'image..."
-    podman save "localhost/$IMAGE_NAME" </dev/tty | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
+    podman save --output "/tmp/$TEMPLATE.tar" "localhost/$IMAGE_NAME"
+    xz -T0 -9 "/tmp/$TEMPLATE.tar"
+    mv "/tmp/$TEMPLATE.tar.xz" "$HOME/podman-template/$TEMPLATE"
     echo "sauvegarde TERMINÉ"
 
     rm -f "$DOCKERFILE"
