@@ -1,1 +1,2 @@
 #!/bin/bash
+https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-11.Dockerfile
