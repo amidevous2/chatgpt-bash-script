@@ -728,7 +728,9 @@ fi
 if [ "$OS_ID" = "fedora" ]; then
     OS_ID="Fedora"
 fi
-
+if [ "$OS_ID" = "almalinux" ]; then
+    OS_ID="AlmaLinux"
+fi
 
 
 
