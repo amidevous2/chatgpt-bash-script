@@ -86,13 +86,13 @@ else
     chmod 777 "$DOCKERFILE"
 
     echo "Construction de $IMAGE_NAME..."
-    podman build -t "$IMAGE_NAME" -f "$DOCKERFILE" .
+    podman build -t "$IMAGE_NAME" -f "$DOCKERFILE" . </dev/tty
     echo "BUILD TERMINÉ"
 
     mkdir -p "$HOME/podman-template/"
 
     echo "Sauvegarde de l'image..."
-    podman save "localhost/$IMAGE_NAME" | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
+    podman save "localhost/$IMAGE_NAME" </dev/tty | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
     echo "sauvegarde TERMINÉ"
 
     rm -f "$DOCKERFILE"
