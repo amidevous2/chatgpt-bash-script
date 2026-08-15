@@ -44,7 +44,6 @@ echo "Distribution : $DISTRIBUTION"
 echo "Version      : $VERSION"
 
 
-
 # Purge Podman avant utilisation
 podman stop -a 2>/dev/null || true
 podman rm -a -f 2>/dev/null || true
@@ -55,7 +54,11 @@ if [ -f "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz" ]; then
 xz -dc "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz" | podman load
 podman run --rm -it localhost/$DISTRIBUTION:$VERSION /bin/bash
 else
-wget https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DISTRIBUTION-$VERSION.Dockerfile
+if command -v curl >/dev/null 2>&1; then
+    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DISTRIBUTION-$VERSION.Dockerfile" -o "$DISTRIBUTION-$VERSION.Dockerfile"
+elif command -v wget >/dev/null 2>&1; then
+    wget -qO "$DISTRIBUTION-$VERSION.Dockerfile" "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DISTRIBUTION-$VERSION.Dockerfile"
+fi
 chmod 777 "$DISTRIBUTION-$VERSION.Dockerfile"
 podman build -t $DISTRIBUTION:$VERSION -f $DISTRIBUTION-$VERSION.Dockerfile .
 mkdir -p "$HOME/podman-template/"
