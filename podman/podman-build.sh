@@ -64,7 +64,7 @@ podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
 if [ -f "$HOME/podman-template/$TEMPLATE" ]; then
 xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
-podman run --rm -it localhost/$DISTRIBUTION:$VERSION /bin/bash
+podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash < /dev/tty
 else
 if command -v curl >/dev/null 2>&1; then
     curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE" -o "$DOCKERFILE"
@@ -82,7 +82,7 @@ podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
 xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
-podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash
+podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash < /dev/tty
 fi
 
 # Purge Podman avant utilisation
