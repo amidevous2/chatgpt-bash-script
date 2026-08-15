@@ -42,7 +42,7 @@ fi
 
 echo "Distribution : $DISTRIBUTION"
 echo "Version      : $VERSION"
-
+IMAGE_NAME="${DISTRIBUTION,,}${VERSION}"
 
 # Purge Podman avant utilisation
 podman stop -a 2>/dev/null || true
@@ -60,9 +60,9 @@ elif command -v wget >/dev/null 2>&1; then
     wget -qO "$DISTRIBUTION-$VERSION.Dockerfile" "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DISTRIBUTION-$VERSION.Dockerfile"
 fi
 chmod 777 "$DISTRIBUTION-$VERSION.Dockerfile"
-podman build -t $DISTRIBUTION:$VERSION -f $DISTRIBUTION-$VERSION.Dockerfile .
+podman build -t $IMAGE_NAME -f $DISTRIBUTION-$VERSION.Dockerfile .
 mkdir -p "$HOME/podman-template/"
-podman save localhost/$DISTRIBUTION:$VERSION | xz -T0 -9 > "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz"
+podman save localhost/$IMAGE_NAME;latest | xz -T0 -9 > "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz"
 rm -f $DISTRIBUTION-$VERSION.Dockerfile
 podman stop -a 2>/dev/null || true
 podman rm -a -f 2>/dev/null || true
@@ -70,7 +70,7 @@ podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
 xz -dc "$HOME/podman-template/$DISTRIBUTION-$VERSION.tar.xz" | podman load
-podman run --rm -it localhost/$DISTRIBUTION:$VERSION /bin/bash
+podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash
 fi
 
 # Purge Podman avant utilisation
