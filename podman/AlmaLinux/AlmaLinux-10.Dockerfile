@@ -1,5 +1,5 @@
 #AlmaLinux-10.Dockerfile
-#commit=7102a3493b1b2c38ba7901e2665ba3626a0a1623
+#commit=1b72bd89c34e3247ccbabdab72236f773d79c469
 FROM docker.io/almalinux:10.2
 
 
