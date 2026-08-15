@@ -74,7 +74,7 @@ fi
 chmod 777 "$DOCKERFILE"
 podman build -t $IMAGE_NAME -f "$DOCKERFILE" .
 mkdir -p "$HOME/podman-template/"
-podman save localhost/$IMAGE_NAME;latest | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
+podman save localhost/$IMAGE_NAME | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
 rm -f "$DOCKERFILE"
 podman stop -a 2>/dev/null || true
 podman rm -a -f 2>/dev/null || true
