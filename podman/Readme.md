@@ -2,9 +2,10 @@
 
 ```
 eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Fedora/Fedora-42.sh"
+    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/build-podman.sh" | bash -s -- --distribution Fedora --version 42
+
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Fedora/Fedora-42.sh"
+    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/build-podman.sh" | bash -s -- --distribution Fedora --version 42
 fi)"
 
 ```
