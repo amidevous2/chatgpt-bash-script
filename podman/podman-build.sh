@@ -62,30 +62,55 @@ podman rm -a -f 2>/dev/null || true
 podman rmi -a -f 2>/dev/null || true
 podman volume rm -a -f 2>/dev/null || true
 podman system prune -a -f --volumes
+
+
+
+
 if [ -f "$HOME/podman-template/$TEMPLATE" ]; then
-xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
-podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash < /dev/tty
+    echo "Template trouvé : $TEMPLATE"
+    echo "Chargement du template..."
+    xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
+    echo "Template chargé."
+    echo "Lancement de $IMAGE_NAME..."
+    podman run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
 else
-if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE" -o "$DOCKERFILE"
-elif command -v wget >/dev/null 2>&1; then
-    wget -qO "$DISTRIBUTION-$VERSION.Dockerfile" "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE"
-fi
-chmod 777 "$DOCKERFILE"
-podman build -t $IMAGE_NAME -f "$DOCKERFILE" .
-mkdir -p "$HOME/podman-template/"
-podman save localhost/$IMAGE_NAME | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
-rm -f "$DOCKERFILE"
-podman stop -a 2>/dev/null || true
-podman rm -a -f 2>/dev/null || true
-podman rmi -a -f 2>/dev/null || true
-podman volume rm -a -f 2>/dev/null || true
-podman system prune -a -f --volumes
-xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
-podman run --rm -it localhost/$IMAGE_NAME:latest /bin/bash < /dev/tty
+    echo "Template absent : $TEMPLATE"
+    echo "Téléchargement du Dockerfile..."
+
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE" -o "$DOCKERFILE"
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO "$DOCKERFILE" "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/$DISTRIBUTION/$DOCKERFILE"
+    fi
+
+    chmod 777 "$DOCKERFILE"
+
+    echo "Construction de $IMAGE_NAME..."
+    podman build -t "$IMAGE_NAME" -f "$DOCKERFILE" .
+
+    mkdir -p "$HOME/podman-template/"
+
+    echo "Sauvegarde de l'image..."
+    podman save "localhost/$IMAGE_NAME" | xz -T0 -9 > "$HOME/podman-template/$TEMPLATE"
+
+    rm -f "$DOCKERFILE"
+
+    echo "Purge de l'image de travail..."
+    podman stop -a 2>/dev/null || true
+    podman rm -a -f 2>/dev/null || true
+    podman rmi -a -f 2>/dev/null || true
+    podman volume rm -a -f 2>/dev/null || true
+    podman system prune -a -f --volumes
+
+    echo "Rechargement du template..."
+    xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
+
+    echo "Template rechargé."
+    echo "Lancement de $IMAGE_NAME..."
+    podman run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
 fi
 
-# Purge Podman avant utilisation
+
 podman stop -a 2>/dev/null || true
 podman rm -a -f 2>/dev/null || true
 podman rmi -a -f 2>/dev/null || true
