@@ -8,7 +8,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update 
 RUN apt-get install -y curl adduser apt 
 RUN apt-get install -y bsdutils chrony console-setup 
-RUN apt-get install -y debconf debconf-i18n dhcpcd-base e2fsprogs eject 
+RUN apt-get install -y debconf debconf-i18n dhcpcd5 e2fsprogs eject 
 RUN apt-get install -y iproute2 iputils-ping kbd kmod less locales login 
 RUN apt-get install -y lsb-release mawk mount netbase netcat-openbsd netplan.io 
 RUN apt-get install -y passwd python3 procps sensible-utils sudo sudo-rs tzdata 
