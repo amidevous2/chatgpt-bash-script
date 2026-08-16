@@ -5,7 +5,7 @@ RUN dnf -y update
 RUN dnf -y install bash curl wget @core
 RUN dnf -y install epel-release
 RUN dnf -y install update
-RUN /usr/bin/crb enable"
+RUN /usr/bin/crb enable
 RUN dnf -y install update
 RUN dnf -y install https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-9.noarch.rpm
 RUN dnf -y install update
