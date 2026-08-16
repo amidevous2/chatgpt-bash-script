@@ -1,13 +1,15 @@
 # Fedora 42 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
+if command -v curl >/dev/null 2>&1; then
     COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 42
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
     COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 42
-fi)"
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution Fedora --version 42
+
 
 ```
 
@@ -15,29 +17,30 @@ fi)"
 # Fedora 43 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
+
+if command -v curl >/dev/null 2>&1; then
     COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 43
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
     COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 43
-fi)"
-
-
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution Fedora --version 43
 ```
 
 
 # Fedora 44 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
+
+if command -v curl >/dev/null 2>&1; then
     COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 44
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
     COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 44
-fi)"
-
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution Fedora --version 44
 
 ```
 
@@ -45,26 +48,27 @@ fi)"
 # AlmaLinux-10 podman command
 
 ```
-
-eval "$(if command -v curl >/dev/null 2>&1; then
+if command -v curl >/dev/null 2>&1; then
     COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution AlmaLinux --version 10
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
     COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution AlmaLinux --version 10
-fi)"
-
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution AlmaLinux --version 10
 ```
 
 # Almalinux-9 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-9.sh"
+if command -v curl >/dev/null 2>&1; then
+    COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-9.sh"
-fi)"
-
+    COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution AlmaLinux --version 9
 ```
 
 
@@ -72,12 +76,14 @@ fi)"
 # Almalinux-8 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-8.sh"
+if command -v curl >/dev/null 2>&1; then
+    COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/AlmaLinux/AlmaLinux-8.sh"
-fi)"
-
+    COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution AlmaLinux --version 8
 ```
 
 
@@ -87,23 +93,27 @@ fi)"
 # Debian-11 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-11.sh"
+if command -v curl >/dev/null 2>&1; then
+    COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-11.sh"
-fi)"
-
+    COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution Debian --version 11
 ```
 
 # Debian-12 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-12.sh"
+if command -v curl >/dev/null 2>&1; then
+    COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-12.sh"
-fi)"
-
+    COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution Debian --version 12
 ```
 
 
@@ -111,10 +121,13 @@ fi)"
 # Debian-13 podman command
 
 ```
-eval "$(if command -v curl >/dev/null 2>&1; then
-    curl -L -sS "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-13.sh"
+if command -v curl >/dev/null 2>&1; then
+    COMMIT=$(curl -fsSL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(curl -fsSL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
 elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/refs/heads/main/podman/Debian/Debian-13.sh"
-fi)"
+    COMMIT=$(wget -qO- "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | jq -r '.sha')
+    SCRIPT=$(wget -qO- "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh")
+fi
+bash -c "$SCRIPT" -- --distribution Debian --version 13
 
 ```
