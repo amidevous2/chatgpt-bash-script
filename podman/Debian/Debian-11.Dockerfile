@@ -5,18 +5,18 @@ FROM debian:11
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
-    apt-get install -y curl adduser apt && \
-    apt-get install -y bsdutils chrony console-setup && \
-    apt-get install -y debconf debconf-i18n dhcpcd-base e2fsprogs eject && \
-    apt-get install -y iproute2 iputils-ping kbd kmod less locales login && \
-    apt-get install -y lsb-release mawk mount netbase netcat-openbsd netplan.io && \
-    apt-get install -y passwd python3 procps sensible-utils sudo sudo-rs tzdata && \
-    apt-get install -y debian-keyring udev vim-tiny && \
-    apt-get -y install vim-tiny whiptail rsyslog ssh net-tools && \
-    apt-get dist-upgrade -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update 
+RUN apt-get install -y curl adduser apt 
+RUN apt-get install -y bsdutils chrony console-setup 
+RUN apt-get install -y debconf debconf-i18n dhcpcd-base e2fsprogs eject 
+RUN apt-get install -y iproute2 iputils-ping kbd kmod less locales login 
+RUN apt-get install -y lsb-release mawk mount netbase netcat-openbsd netplan.io 
+RUN apt-get install -y passwd python3 procps sensible-utils sudo sudo-rs tzdata 
+RUN apt-get install -y debian-keyring udev vim-tiny 
+RUN apt-get -y install vim-tiny whiptail rsyslog ssh net-tools 
+RUN apt-get dist-upgrade -y 
+RUN apt-get clean 
+RUN rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]
 
