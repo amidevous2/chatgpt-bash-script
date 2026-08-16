@@ -1,6 +1,8 @@
 #AlmaLinux-9.Dockerfile
 FROM docker.io/library/almalinux:9
 
+RUN dnf -y swap coreutils-single coreutils
+RUN dnf -y swap curl-minimal curl
 RUN dnf -y update
 RUN dnf -y install bash curl wget @core
 RUN dnf -y install epel-release
