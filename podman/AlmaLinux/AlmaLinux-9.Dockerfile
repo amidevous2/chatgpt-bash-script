@@ -1,6 +1,5 @@
 #AlmaLinux-9.Dockerfile
-FROM almalinux:9
-
+FROM docker.io/library/almalinux:9
 # install AlmaLinux Core + activate repo EPEL and Remi (for php)
 
 RUN dnf -y update && \
