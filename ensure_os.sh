@@ -746,6 +746,15 @@ fi
 if [ "$OS_ID" = "almalinux" ]; then
     OS_ID="AlmaLinux"
 fi
+if [ "$OS_ID" = "centos" ]; then
+    OS_ID="CentOS"
+fi
+if [ "$OS_ID" = "debian" ]; then
+    OS_ID="Debian"
+fi
+if [ "$OS_ID" = "ubuntu" ]; then
+    OS_ID="Ubuntu"
+fi
 
 
 
