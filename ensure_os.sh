@@ -309,7 +309,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
         case "$RELEASE" in
             Amazon\ Linux*)
                 OS="Amazon Linux"
-                OS_ID="amzn"
+                OS_ID="Amazon"
                 OS_FAMILY="rhel"
                 OS_VERSION="$(echo "$RELEASE" | sed 's/^.*release //;s/ (.*$//')"
                 ;;
@@ -329,7 +329,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
             case "$RELEASE" in
                 CentOS*)
                     OS="CentOS"
-                    OS_ID="centos"
+                    OS_ID="CentOS"
                     OS_FAMILY="rhel"
                     OS_VERSION="$(echo "$RELEASE" | sed 's/^.*release //;s/ (.*$//')"
                     ;;
@@ -347,7 +347,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
         case "$RELEASE" in
             Red\ Hat\ Enterprise\ Linux*)
                 OS="Red Hat Enterprise Linux"
-                OS_ID="rhel"
+                OS_ID="RHEL"
                 OS_FAMILY="rhel"
                 OS_VERSION="$(echo "$RELEASE" | sed 's/^.*release //;s/ (.*$//')"
                 ;;
@@ -360,7 +360,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/almalinux-release ]; then
         OS="AlmaLinux"
-        OS_ID="almalinux"
+        OS_ID="AlmaLinux"
         OS_FAMILY="rhel"
         OS_VERSION="$(cat /etc/almalinux-release 2>/dev/null | sed 's/^.*release //;s/ (.*$//')"
     fi
@@ -371,7 +371,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/rocky-release ]; then
         OS="Rocky Linux"
-        OS_ID="rocky"
+        OS_ID="Rocky"
         OS_FAMILY="rhel"
         OS_VERSION="$(cat /etc/rocky-release 2>/dev/null | sed 's/^.*release //;s/ (.*$//')"
     fi
@@ -382,7 +382,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/oracle-release ]; then
         OS="Oracle Linux"
-        OS_ID="ol"
+        OS_ID="Oracle"
         OS_FAMILY="rhel"
         OS_VERSION="$(cat /etc/oracle-release 2>/dev/null | sed 's/^.*release //;s/ (.*$//')"
     fi
@@ -393,7 +393,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/sl-release ]; then
         OS="Scientific Linux"
-        OS_ID="scientific"
+        OS_ID="Scientific"
         OS_FAMILY="rhel"
         OS_VERSION="$(cat /etc/sl-release 2>/dev/null | sed 's/^.*release //;s/ (.*$//')"
     fi
@@ -404,7 +404,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/debian_version ]; then
         OS="Debian"
-        OS_ID="debian"
+        OS_ID="Debian"
         OS_FAMILY="debian"
         OS_VERSION="$(cat /etc/debian_version 2>/dev/null)"
     fi
@@ -419,7 +419,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
         if [ -n "$LSB_ID" ]; then
             OS="$LSB_ID"
-            OS_ID="$(echo "$LSB_ID" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')"
+            OS_ID="$LSB_ID"
             OS_VERSION="$LSB_VERSION"
             OS_FAMILY="debian"
         fi
@@ -431,7 +431,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/fedora-release ]; then
         OS="Fedora"
-        OS_ID="fedora"
+        OS_ID="Fedora"
         OS_FAMILY="fedora"
         OS_VERSION="$(cat /etc/fedora-release 2>/dev/null | sed 's/^.*release //;s/ (.*$//')"
     fi
@@ -442,7 +442,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/alpine-release ]; then
         OS="Alpine Linux"
-        OS_ID="alpine"
+        OS_ID="Alpine"
         OS_FAMILY="alpine"
         OS_VERSION="$(cat /etc/alpine-release 2>/dev/null)"
     fi
@@ -453,7 +453,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/arch-release ]; then
         OS="Arch Linux"
-        OS_ID="arch"
+        OS_ID="ArchLinux"
         OS_FAMILY="arch"
         OS_VERSION="rolling"
     fi
@@ -464,7 +464,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/gentoo-release ]; then
         OS="Gentoo"
-        OS_ID="gentoo"
+        OS_ID="Gentoo"
         OS_FAMILY="gentoo"
         OS_VERSION="$(cat /etc/gentoo-release 2>/dev/null | sed 's/^.*release //')"
     fi
@@ -475,7 +475,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/funtoo-release ]; then
         OS="Funtoo"
-        OS_ID="funtoo"
+        OS_ID="Funtoo"
         OS_FAMILY="gentoo"
         OS_VERSION="$(cat /etc/funtoo-release 2>/dev/null)"
     fi
@@ -486,7 +486,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/slackware-version ]; then
         OS="Slackware"
-        OS_ID="slackware"
+        OS_ID="Slackware"
         OS_FAMILY="slackware"
         OS_VERSION="$(cat /etc/slackware-version 2>/dev/null | sed 's/^Slackware //')"
     fi
@@ -497,7 +497,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/SuSE-release ]; then
         OS="SUSE"
-        OS_ID="suse"
+        OS_ID="OpenSuse"
         OS_FAMILY="suse"
         OS_VERSION="$(sed -n 's/^VERSION = //p' /etc/SuSE-release | head -n 1)"
     fi
@@ -508,7 +508,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/mageia-release ]; then
         OS="Mageia"
-        OS_ID="mageia"
+        OS_ID="Mageia"
         OS_FAMILY="mandriva"
         OS_VERSION="$(cat /etc/mageia-release 2>/dev/null | sed 's/^.*release //;s/ (.*$//')"
     fi
@@ -519,7 +519,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/void-release ]; then
         OS="Void Linux"
-        OS_ID="void"
+        OS_ID="Void"
         OS_FAMILY="void"
         OS_VERSION="rolling"
     fi
@@ -531,7 +531,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
     if [ -z "$OS_ID" ] && [ -f /etc/DISTRO_SPECS ]; then
         if grep -q '^DISTRO_NAME=' /etc/DISTRO_SPECS 2>/dev/null; then
             OS="$(sed -n 's/^DISTRO_NAME=//p' /etc/DISTRO_SPECS)"
-            OS_ID="puppy"
+            OS_ID="Puppy"
             OS_FAMILY="puppy"
             OS_VERSION="$(sed -n 's/^DISTRO_VERSION=//p' /etc/DISTRO_SPECS)"
         fi
@@ -543,7 +543,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/tc-version ]; then
         OS="Tiny Core Linux"
-        OS_ID="tinycore"
+        OS_ID="Tinycore"
         OS_FAMILY="tinycore"
         OS_VERSION="$(cat /etc/tc-version 2>/dev/null)"
     fi
@@ -554,7 +554,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/NIXOS ]; then
         OS="NixOS"
-        OS_ID="nixos"
+        OS_ID="Nixos"
         OS_FAMILY="nixos"
     fi
 
@@ -569,7 +569,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
            [ -d /etc/0linux ]; then
 
             OS="0Linux"
-            OS_ID="0linux"
+            OS_ID="0Linux"
             OS_FAMILY="0linux"
 
             if [ -f /etc/0linux-release ]; then
@@ -588,7 +588,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/openwrt_release ]; then
         OS="OpenWrt"
-        OS_ID="openwrt"
+        OS_ID="Openwrt"
         OS_FAMILY="openwrt"
         OS_VERSION="$(sed -n "s/^DISTRIB_RELEASE='\(.*\)'/\1/p" /etc/openwrt_release)"
     fi
@@ -599,7 +599,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/knoppix_version ]; then
         OS="KNOPPIX"
-        OS_ID="knoppix"
+        OS_ID="Knoppix"
         OS_FAMILY="debian"
         OS_VERSION="$(cat /etc/knoppix_version 2>/dev/null)"
     fi
@@ -610,7 +610,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /etc/rpi-issue ]; then
         OS="Raspbian"
-        OS_ID="raspbian"
+        OS_ID="Raspbian"
         OS_FAMILY="debian"
         OS_VERSION="$(cat /etc/rpi-issue 2>/dev/null)"
     fi
@@ -621,7 +621,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /boot/dietpi/.version ]; then
         OS="DietPi"
-        OS_ID="dietpi"
+        OS_ID="Dietpi"
         OS_FAMILY="debian"
         OS_VERSION="$(sed -n 's/^VER=\(.*\)/\1/p' /boot/dietpi/.version)"
     fi
@@ -632,7 +632,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /bedrock/etc/bedrock-release ]; then
         OS="Bedrock Linux"
-        OS_ID="bedrock"
+        OS_ID="Bedrock"
         OS_FAMILY="bedrock"
         OS_VERSION="$(cat /bedrock/etc/bedrock-release 2>/dev/null)"
     fi
@@ -643,7 +643,7 @@ if [ -z "$OS" ] && [ "$OS_KERNEL" = "Linux" ]; then
 
     if [ -z "$OS_ID" ] && [ -f /System/Settings/Version ]; then
         OS="GoboLinux"
-        OS_ID="gobo"
+        OS_ID="Gobo"
         OS_FAMILY="gobo"
         OS_VERSION="$(cat /System/Settings/Version 2>/dev/null)"
     fi
@@ -740,21 +740,13 @@ esac
 
 
 
-if [ "$OS_ID" = "fedora" ]; then
-    OS_ID="Fedora"
-fi
-if [ "$OS_ID" = "almalinux" ]; then
-    OS_ID="AlmaLinux"
-fi
-if [ "$OS_ID" = "centos" ]; then
-    OS_ID="CentOS"
-fi
-if [ "$OS_ID" = "debian" ]; then
-    OS_ID="Debian"
-fi
-if [ "$OS_ID" = "ubuntu" ]; then
-    OS_ID="Ubuntu"
-fi
+case "$OS_ID" in
+    fedora) OS_ID="Fedora" ;;
+    almalinux) OS_ID="AlmaLinux" ;;
+    centos) OS_ID="CentOS" ;;
+    debian) OS_ID="Debian" ;;
+    ubuntu) OS_ID="Ubuntu" ;;
+esac
 
 
 
