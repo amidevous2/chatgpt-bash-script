@@ -97,7 +97,8 @@ if [ "$BIN_ARCH" = "x86_64" ]; then
 	TOOLSET62=https://vault.centos.org/6.10/os/x86_64/Packages/wget-1.12-10.el6.x86_64.rpm
 	TOOLSET63=https://vault.centos.org/6.10/os/x86_64/Packages/zlib-1.2.3-29.el6.x86_64.rpm
 	TOOLSET64=https://vault.centos.org/6.10/os/x86_64/Packages/zlib-devel-1.2.3-29.el6.x86_64.rpm
-	TOOLSET_MAX=64
+	TOOLSET65=https://vault.centos.org/6.10/os/x86_64/Packages/basesystem-10.0-4.el6.noarch.rpm
+	TOOLSET_MAX=65
 else
     PREFIXLIBDIR=$PREFIX/lib
     LIBDIR=lib
