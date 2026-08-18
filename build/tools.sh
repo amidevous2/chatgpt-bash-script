@@ -622,7 +622,7 @@ GCCBOOTRAP_TAR="${GCCBOOTRAP_NAME%.xz}"
 rm -f $GCCBOOTRAP_NAME $GCCBOOTRAP_TAR
 
 
-export PATH=$PATH:$GCC447/usr/bin:$GCC447/usr/sbin:$GCC447/sbin:$GCC447/bin
+export PATH=$PATH:$GCC447/usr/bin:$GCC447/sbin
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$GCC447/usr/$LIBDIR"
 export CPATH="$CPATH:$GCC447/usr/include"
 export LIBRARY_PATH="$LIBRARY_PATH:$GCC447/usr/$LIBDIR"
@@ -631,4 +631,4 @@ export C_INCLUDE_PATH="$C_INCLUDE_PATH:$GCC447/usr/include"
 export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$GCC447/usr/include"
 export CC="$GCC447/usr/bin/gcc"
 export CXX="$GCC447/usr/bin/g++"
-find "$GCC447/usr/bin" "$GCC447/usr/sbin" "$GCC447/sbin" "$GCC447/usr/libexec" -type f -exec chmod +x {} \; 2>/dev/null
+find "$GCC447/usr/bin" "$GCC447/sbin" -type f -exec chmod +x {} \; 2>/dev/null
