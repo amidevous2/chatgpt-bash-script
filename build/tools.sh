@@ -33,84 +33,86 @@ if [ "$BIN_ARCH" = "x86_64" ]; then
 	P7ZIP6=https://raw.githubusercontent.com/amidevous2/p7zip-bin/refs/heads/main/x86_64/libexec/p7zip/7za
 	#yum -y install yum-utils
 	#repotrack --arch=x86_64 --url acl attr basesystem coreutils dhclient filesystem initscripts iptables-ipv6 ipw2200-firmware iwl1000-firmware iwl5000-firmware iwl6000g2a-firmware kernel-firmware ncurses policycoreutils ql2100-firmware ql2400-firmware rootfiles rt61pci-firmware setup util-linux-ng yum aic94xx-firmware audit bash cpio e2fsprogs glibc iproute iputils ivtv-firmware iwl3945-firmware iwl5150-firmware iwl6050-firmware kexec-tools openssh-server postfix ql2200-firmware ql2500-firmware rpm rt73usb-firmware shadow-utils vim-minimal zd1211-firmware atmel-firmware b43-openfwwf bfa-firmware cronie efibootmgr grub iptables ipw2100-firmware iwl100-firmware iwl4965-firmware iwl6000-firmware kbd libertas-usb8388-firmware passwd procps ql23xx-firmware rdma rsyslog selinux-policy-targeted sudo xorg-x11-drv-ati-firmware wget curl-devel openssl-devel gcc gcc-c++ libmpc limpc-devel libmpfr libmpfr-devel |grep x86_64.rpm
-	TOOLSET1=https://vault.centos.org/6.10/os/x86_64/Packages/audit-libs-2.4.5-6.el6.x86_64.rpm
-	TOOLSET2=https://vault.centos.org/6.10/os/x86_64/Packages/bash-4.1.2-48.el6.x86_64.rpm
-	TOOLSET3=https://vault.centos.org/6.10/os/x86_64/Packages/binutils-2.20.51.0.2-5.48.el6.x86_64.rpm
-	TOOLSET4=https://vault.centos.org/6.10/os/x86_64/Packages/chkconfig-1.3.49.5-1.el6.x86_64.rpm
-	TOOLSET5=https://vault.centos.org/6.10/os/x86_64/Packages/cloog-ppl-0.15.7-1.2.el6.i686.rpm
-	TOOLSET6=https://vault.centos.org/6.10/os/x86_64/Packages/cloog-ppl-0.15.7-1.2.el6.x86_64.rpm
-	TOOLSET7=https://vault.centos.org/6.10/os/x86_64/Packages/coreutils-8.4-47.el6.x86_64.rpm
-	TOOLSET8=https://vault.centos.org/6.10/os/x86_64/Packages/coreutils-libs-8.4-47.el6.x86_64.rpm
-	TOOLSET9=https://vault.centos.org/6.10/os/x86_64/Packages/cpp-4.4.7-23.el6.x86_64.rpm
-	TOOLSET10=https://vault.centos.org/6.10/os/x86_64/Packages/cracklib-2.8.16-4.el6.x86_64.rpm
-	TOOLSET11=https://vault.centos.org/6.10/os/x86_64/Packages/cracklib-dicts-2.8.16-4.el6.x86_64.rpm
-	TOOLSET12=https://vault.centos.org/6.10/os/x86_64/Packages/db4-4.7.25-22.el6.x86_64.rpm
-	TOOLSET13=https://vault.centos.org/6.10/os/x86_64/Packages/filesystem-2.4.30-3.el6.x86_64.rpm
-	TOOLSET14=https://vault.centos.org/6.10/os/x86_64/Packages/gcc-4.4.7-23.el6.x86_64.rpm
-	TOOLSET15=https://vault.centos.org/6.10/os/x86_64/Packages/gcc-c++-4.4.7-23.el6.x86_64.rpm
-	TOOLSET16=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-2.12-1.212.el6.i686.rpm
-	TOOLSET17=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-2.12-1.212.el6.x86_64.rpm
-	TOOLSET18=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-common-2.12-1.212.el6.x86_64.rpm
-	TOOLSET19=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-devel-2.12-1.212.el6.i686.rpm
-	TOOLSET20=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-devel-2.12-1.212.el6.x86_64.rpm
-	TOOLSET21=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-headers-2.12-1.212.el6.x86_64.rpm
-	TOOLSET22=https://vault.centos.org/6.10/os/x86_64/Packages/gmp-4.3.1-13.el6.i686.rpm
-	TOOLSET23=https://vault.centos.org/6.10/os/x86_64/Packages/gmp-4.3.1-13.el6.x86_64.rpm
-	TOOLSET24=https://vault.centos.org/6.10/os/x86_64/Packages/grep-2.20-6.el6.x86_64.rpm
-	TOOLSET25=https://vault.centos.org/6.10/os/x86_64/Packages/groff-1.18.1.4-21.el6.x86_64.rpm
-	TOOLSET26=https://vault.centos.org/6.10/os/x86_64/Packages/gzip-1.3.12-24.el6.x86_64.rpm
-	TOOLSET27=https://vault.centos.org/6.10/os/x86_64/Packages/info-4.13a-8.el6.x86_64.rpm
-	TOOLSET28=https://vault.centos.org/6.10/os/x86_64/Packages/kernel-headers-2.6.32-754.el6.x86_64.rpm
-	TOOLSET29=https://vault.centos.org/6.10/os/x86_64/Packages/keyutils-libs-1.4-5.el6.x86_64.rpm
+	#TOOLSET1=https://vault.centos.org/6.10/os/x86_64/Packages/audit-libs-2.4.5-6.el6.x86_64.rpm
+	#TOOLSET2=https://vault.centos.org/6.10/os/x86_64/Packages/bash-4.1.2-48.el6.x86_64.rpm
+	#TOOLSET3=https://vault.centos.org/6.10/os/x86_64/Packages/binutils-2.20.51.0.2-5.48.el6.x86_64.rpm
+	#TOOLSET4=https://vault.centos.org/6.10/os/x86_64/Packages/chkconfig-1.3.49.5-1.el6.x86_64.rpm
+	#TOOLSET5=https://vault.centos.org/6.10/os/x86_64/Packages/cloog-ppl-0.15.7-1.2.el6.i686.rpm
+	#TOOLSET6=https://vault.centos.org/6.10/os/x86_64/Packages/cloog-ppl-0.15.7-1.2.el6.x86_64.rpm
+	#TOOLSET7=https://vault.centos.org/6.10/os/x86_64/Packages/coreutils-8.4-47.el6.x86_64.rpm
+	#TOOLSET8=https://vault.centos.org/6.10/os/x86_64/Packages/coreutils-libs-8.4-47.el6.x86_64.rpm
+	#TOOLSET9=https://vault.centos.org/6.10/os/x86_64/Packages/cpp-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET10=https://vault.centos.org/6.10/os/x86_64/Packages/cracklib-2.8.16-4.el6.x86_64.rpm
+	#TOOLSET11=https://vault.centos.org/6.10/os/x86_64/Packages/cracklib-dicts-2.8.16-4.el6.x86_64.rpm
+	#TOOLSET12=https://vault.centos.org/6.10/os/x86_64/Packages/db4-4.7.25-22.el6.x86_64.rpm
+	#TOOLSET13=https://vault.centos.org/6.10/os/x86_64/Packages/filesystem-2.4.30-3.el6.x86_64.rpm
+	#TOOLSET14=https://vault.centos.org/6.10/os/x86_64/Packages/gcc-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET15=https://vault.centos.org/6.10/os/x86_64/Packages/gcc-c++-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET16=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-2.12-1.212.el6.i686.rpm
+	#TOOLSET17=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-2.12-1.212.el6.x86_64.rpm
+	#TOOLSET18=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-common-2.12-1.212.el6.x86_64.rpm
+	#TOOLSET19=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-devel-2.12-1.212.el6.i686.rpm
+	#TOOLSET20=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-devel-2.12-1.212.el6.x86_64.rpm
+	#TOOLSET21=https://vault.centos.org/6.10/os/x86_64/Packages/glibc-headers-2.12-1.212.el6.x86_64.rpm
+	#TOOLSET22=https://vault.centos.org/6.10/os/x86_64/Packages/gmp-4.3.1-13.el6.i686.rpm
+	#TOOLSET23=https://vault.centos.org/6.10/os/x86_64/Packages/gmp-4.3.1-13.el6.x86_64.rpm
+	#TOOLSET24=https://vault.centos.org/6.10/os/x86_64/Packages/grep-2.20-6.el6.x86_64.rpm
+	#TOOLSET25=https://vault.centos.org/6.10/os/x86_64/Packages/groff-1.18.1.4-21.el6.x86_64.rpm
+	#TOOLSET26=https://vault.centos.org/6.10/os/x86_64/Packages/gzip-1.3.12-24.el6.x86_64.rpm
+	#TOOLSET27=https://vault.centos.org/6.10/os/x86_64/Packages/info-4.13a-8.el6.x86_64.rpm
+	#TOOLSET28=https://vault.centos.org/6.10/os/x86_64/Packages/kernel-headers-2.6.32-754.el6.x86_64.rpm
+	#TOOLSET29=https://vault.centos.org/6.10/os/x86_64/Packages/keyutils-libs-1.4-5.el6.x86_64.rpm
 	TOOLSET30=https://vault.centos.org/6.10/os/x86_64/Packages/keyutils-libs-devel-1.4-5.el6.x86_64.rpm
-	TOOLSET31=https://vault.centos.org/6.10/os/x86_64/Packages/krb5-devel-1.10.3-65.el6.x86_64.rpm
-	TOOLSET32=https://vault.centos.org/6.10/os/x86_64/Packages/krb5-libs-1.10.3-65.el6.x86_64.rpm
-	TOOLSET33=https://vault.centos.org/6.10/os/x86_64/Packages/less-436-13.el6.x86_64.rpm
-	TOOLSET34=https://vault.centos.org/6.10/os/x86_64/Packages/libacl-2.2.49-7.el6_9.1.x86_64.rpm
-	TOOLSET35=https://vault.centos.org/6.10/os/x86_64/Packages/libattr-2.4.44-7.el6.x86_64.rpm
-	TOOLSET36=https://vault.centos.org/6.10/os/x86_64/Packages/libcap-2.16-5.5.el6.x86_64.rpm
-	TOOLSET37=https://vault.centos.org/6.10/os/x86_64/Packages/libcom_err-1.41.12-24.el6.x86_64.rpm
-	TOOLSET38=https://vault.centos.org/6.10/os/x86_64/Packages/libcom_err-devel-1.41.12-24.el6.x86_64.rpm
-	TOOLSET39=https://vault.centos.org/6.10/os/x86_64/Packages/libgcc-4.4.7-23.el6.i686.rpm
-	TOOLSET40=https://vault.centos.org/6.10/os/x86_64/Packages/libgcc-4.4.7-23.el6.x86_64.rpm
-	TOOLSET41=https://vault.centos.org/6.10/os/x86_64/Packages/libgomp-4.4.7-23.el6.i686.rpm
-	TOOLSET42=https://vault.centos.org/6.10/os/x86_64/Packages/libgomp-4.4.7-23.el6.x86_64.rpm
-	TOOLSET43=https://vault.centos.org/6.10/os/x86_64/Packages/libkadm5-1.10.3-65.el6.x86_64.rpm
-	TOOLSET44=https://fedora-archive.ip-connect.info/epel/6/x86_64/Packages/l/libmpc-0.8-3.el6.x86_64.rpm
-	TOOLSET45=https://vault.centos.org/6.10/os/x86_64/Packages/libselinux-2.0.94-7.el6.x86_64.rpm
-	TOOLSET46=https://vault.centos.org/6.10/os/x86_64/Packages/libselinux-devel-2.0.94-7.el6.x86_64.rpm
-	TOOLSET47=https://vault.centos.org/6.10/os/x86_64/Packages/libsepol-2.0.41-4.el6.x86_64.rpm
-	TOOLSET48=https://vault.centos.org/6.10/os/x86_64/Packages/libsepol-devel-2.0.41-4.el6.x86_64.rpm
-	TOOLSET49=https://vault.centos.org/6.10/os/x86_64/Packages/libstdc++-4.4.7-23.el6.i686.rpm
-	TOOLSET50=https://vault.centos.org/6.10/os/x86_64/Packages/libstdc++-4.4.7-23.el6.x86_64.rpm
-	TOOLSET51=https://vault.centos.org/6.10/os/x86_64/Packages/libstdc++-devel-4.4.7-23.el6.x86_64.rpm
-	TOOLSET52=https://vault.centos.org/6.10/os/x86_64/Packages/libtasn1-2.3-6.el6_5.x86_64.rpm
-	TOOLSET53=https://vault.centos.org/6.10/os/x86_64/Packages/make-3.81-23.el6.x86_64.rpm
-	TOOLSET54=https://vault.centos.org/6.10/os/x86_64/Packages/mpfr-2.4.1-6.el6.x86_64.rpm
-	TOOLSET55=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-5.7-4.20090207.el6.x86_64.rpm
-	TOOLSET56=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-base-5.7-4.20090207.el6.x86_64.rpm
-	TOOLSET57=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-libs-5.7-4.20090207.el6.i686.rpm
-	TOOLSET58=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-libs-5.7-4.20090207.el6.x86_64.rpm
-	TOOLSET59=https://vault.centos.org/6.10/os/x86_64/Packages/nss-softokn-freebl-3.14.3-23.3.el6_8.i686.rpm
-	TOOLSET60=https://vault.centos.org/6.10/os/x86_64/Packages/nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64.rpm
-	TOOLSET61=https://vault.centos.org/6.10/os/x86_64/Packages/openssl-1.0.1e-57.el6.x86_64.rpm
-	TOOLSET62=https://vault.centos.org/6.10/os/x86_64/Packages/openssl-devel-1.0.1e-57.el6.x86_64.rpm
-	TOOLSET63=https://vault.centos.org/6.10/os/x86_64/Packages/p11-kit-0.18.5-2.el6_5.2.x86_64.rpm
-	TOOLSET64=https://vault.centos.org/6.10/os/x86_64/Packages/p11-kit-trust-0.18.5-2.el6_5.2.x86_64.rpm
-	TOOLSET65=https://vault.centos.org/6.10/os/x86_64/Packages/pam-1.1.1-24.el6.x86_64.rpm
-	TOOLSET66=https://vault.centos.org/6.10/os/x86_64/Packages/pcre-7.8-7.el6.x86_64.rpm
-	TOOLSET67=https://vault.centos.org/6.10/os/x86_64/Packages/pkgconfig-0.23-9.1.el6.x86_64.rpm
-	TOOLSET68=https://vault.centos.org/6.10/os/x86_64/Packages/popt-1.13-7.el6.x86_64.rpm
-	TOOLSET69=https://vault.centos.org/6.10/os/x86_64/Packages/ppl-0.10.2-11.el6.i686.rpm
-	TOOLSET70=https://vault.centos.org/6.10/os/x86_64/Packages/ppl-0.10.2-11.el6.x86_64.rpm
-	TOOLSET71=https://vault.centos.org/6.10/os/x86_64/Packages/sed-4.2.1-10.el6.x86_64.rpm
-	TOOLSET72=https://vault.centos.org/6.10/os/x86_64/Packages/setup-2.8.14-23.el6.noarch.rpm
-	TOOLSET73=https://vault.centos.org/6.10/os/x86_64/Packages/tzdata-2018e-3.el6.noarch.rpm
-	TOOLSET74=https://vault.centos.org/6.10/os/x86_64/Packages/wget-1.12-10.el6.x86_64.rpm
-	TOOLSET75=https://vault.centos.org/6.10/os/x86_64/Packages/zlib-1.2.3-29.el6.x86_64.rpm
-	TOOLSET76=https://vault.centos.org/6.10/os/x86_64/Packages/zlib-devel-1.2.3-29.el6.x86_64.rpm
-	TOOLSET77=https://vault.centos.org/6.10/os/x86_64/Packages/basesystem-10.0-4.el6.noarch.rpm
-	TOOLSET_MAX=77
+	#TOOLSET31=https://vault.centos.org/6.10/os/x86_64/Packages/krb5-devel-1.10.3-65.el6.x86_64.rpm
+	#TOOLSET32=https://vault.centos.org/6.10/os/x86_64/Packages/krb5-libs-1.10.3-65.el6.x86_64.rpm
+	#TOOLSET33=https://vault.centos.org/6.10/os/x86_64/Packages/less-436-13.el6.x86_64.rpm
+	#TOOLSET34=https://vault.centos.org/6.10/os/x86_64/Packages/libacl-2.2.49-7.el6_9.1.x86_64.rpm
+	#TOOLSET35=https://vault.centos.org/6.10/os/x86_64/Packages/libattr-2.4.44-7.el6.x86_64.rpm
+	#TOOLSET36=https://vault.centos.org/6.10/os/x86_64/Packages/libcap-2.16-5.5.el6.x86_64.rpm
+	#TOOLSET37=https://vault.centos.org/6.10/os/x86_64/Packages/libcom_err-1.41.12-24.el6.x86_64.rpm
+	#TOOLSET38=https://vault.centos.org/6.10/os/x86_64/Packages/libcom_err-devel-1.41.12-24.el6.x86_64.rpm
+	#TOOLSET39=https://vault.centos.org/6.10/os/x86_64/Packages/libgcc-4.4.7-23.el6.i686.rpm
+	#TOOLSET40=https://vault.centos.org/6.10/os/x86_64/Packages/libgcc-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET41=https://vault.centos.org/6.10/os/x86_64/Packages/libgomp-4.4.7-23.el6.i686.rpm
+	#TOOLSET42=https://vault.centos.org/6.10/os/x86_64/Packages/libgomp-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET43=https://vault.centos.org/6.10/os/x86_64/Packages/libkadm5-1.10.3-65.el6.x86_64.rpm
+	#TOOLSET44=https://fedora-archive.ip-connect.info/epel/6/x86_64/Packages/l/libmpc-0.8-3.el6.x86_64.rpm
+	#TOOLSET45=https://vault.centos.org/6.10/os/x86_64/Packages/libselinux-2.0.94-7.el6.x86_64.rpm
+	#TOOLSET46=https://vault.centos.org/6.10/os/x86_64/Packages/libselinux-devel-2.0.94-7.el6.x86_64.rpm
+	#TOOLSET47=https://vault.centos.org/6.10/os/x86_64/Packages/libsepol-2.0.41-4.el6.x86_64.rpm
+	#TOOLSET48=https://vault.centos.org/6.10/os/x86_64/Packages/libsepol-devel-2.0.41-4.el6.x86_64.rpm
+	#TOOLSET49=https://vault.centos.org/6.10/os/x86_64/Packages/libstdc++-4.4.7-23.el6.i686.rpm
+	#TOOLSET50=https://vault.centos.org/6.10/os/x86_64/Packages/libstdc++-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET51=https://vault.centos.org/6.10/os/x86_64/Packages/libstdc++-devel-4.4.7-23.el6.x86_64.rpm
+	#TOOLSET52=https://vault.centos.org/6.10/os/x86_64/Packages/libtasn1-2.3-6.el6_5.x86_64.rpm
+	#TOOLSET53=https://vault.centos.org/6.10/os/x86_64/Packages/make-3.81-23.el6.x86_64.rpm
+	TOOLSET1=https://vault.centos.org/6.10/os/x86_64/Packages/make-3.81-23.el6.x86_64.rpm
+	#TOOLSET54=https://vault.centos.org/6.10/os/x86_64/Packages/mpfr-2.4.1-6.el6.x86_64.rpm
+	#TOOLSET55=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-5.7-4.20090207.el6.x86_64.rpm
+	#TOOLSET56=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-base-5.7-4.20090207.el6.x86_64.rpm
+	#TOOLSET57=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-libs-5.7-4.20090207.el6.i686.rpm
+	#TOOLSET58=https://vault.centos.org/6.10/os/x86_64/Packages/ncurses-libs-5.7-4.20090207.el6.x86_64.rpm
+	#TOOLSET59=https://vault.centos.org/6.10/os/x86_64/Packages/nss-softokn-freebl-3.14.3-23.3.el6_8.i686.rpm
+	#TOOLSET60=https://vault.centos.org/6.10/os/x86_64/Packages/nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64.rpm
+	#TOOLSET61=https://vault.centos.org/6.10/os/x86_64/Packages/openssl-1.0.1e-57.el6.x86_64.rpm
+	#TOOLSET62=https://vault.centos.org/6.10/os/x86_64/Packages/openssl-devel-1.0.1e-57.el6.x86_64.rpm
+	#TOOLSET63=https://vault.centos.org/6.10/os/x86_64/Packages/p11-kit-0.18.5-2.el6_5.2.x86_64.rpm
+	#TOOLSET64=https://vault.centos.org/6.10/os/x86_64/Packages/p11-kit-trust-0.18.5-2.el6_5.2.x86_64.rpm
+	#TOOLSET65=https://vault.centos.org/6.10/os/x86_64/Packages/pam-1.1.1-24.el6.x86_64.rpm
+	#TOOLSET66=https://vault.centos.org/6.10/os/x86_64/Packages/pcre-7.8-7.el6.x86_64.rpm
+	#TOOLSET67=https://vault.centos.org/6.10/os/x86_64/Packages/pkgconfig-0.23-9.1.el6.x86_64.rpm
+	#TOOLSET68=https://vault.centos.org/6.10/os/x86_64/Packages/popt-1.13-7.el6.x86_64.rpm
+	#TOOLSET69=https://vault.centos.org/6.10/os/x86_64/Packages/ppl-0.10.2-11.el6.i686.rpm
+	#TOOLSET70=https://vault.centos.org/6.10/os/x86_64/Packages/ppl-0.10.2-11.el6.x86_64.rpm
+	#TOOLSET71=https://vault.centos.org/6.10/os/x86_64/Packages/sed-4.2.1-10.el6.x86_64.rpm
+	#TOOLSET72=https://vault.centos.org/6.10/os/x86_64/Packages/setup-2.8.14-23.el6.noarch.rpm
+	#TOOLSET73=https://vault.centos.org/6.10/os/x86_64/Packages/tzdata-2018e-3.el6.noarch.rpm
+	#TOOLSET74=https://vault.centos.org/6.10/os/x86_64/Packages/wget-1.12-10.el6.x86_64.rpm
+	#TOOLSET75=https://vault.centos.org/6.10/os/x86_64/Packages/zlib-1.2.3-29.el6.x86_64.rpm
+	#TOOLSET76=https://vault.centos.org/6.10/os/x86_64/Packages/zlib-devel-1.2.3-29.el6.x86_64.rpm
+	#TOOLSET77=https://vault.centos.org/6.10/os/x86_64/Packages/basesystem-10.0-4.el6.noarch.rpm
+	TOOLSET_MAX=1
+	GCCBOOTRAPURL=https://sourceforge.net/projects/gcc-precompiled/files/gcc-x86_64-linux-8.5.0.tar.xz
 else
     PREFIXLIBDIR=$PREFIX/lib
     LIBDIR=lib
@@ -121,30 +123,30 @@ else
 	P7ZIP4=https://raw.githubusercontent.com/amidevous2/p7zip-bin/refs/heads/main/x86/libexec/p7zip/7z.so
 	P7ZIP5=https://raw.githubusercontent.com/amidevous2/p7zip-bin/refs/heads/main/x86/libexec/p7zip/7zCon.sfx
 	P7ZIP6=https://raw.githubusercontent.com/amidevous2/p7zip-bin/refs/heads/main/x86/libexec/p7zip/7za
-	TOOLSET1=https://vault.centos.org/centos/6.10/os/i386/Packages/alsa-lib-1.1.0-4.el6.i686.rpm
-	TOOLSET2=https://vault.centos.org/centos/6.10/os/i386/Packages/alsa-lib-devel-1.1.0-4.el6.i686.rpm
-	TOOLSET3=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-1.3.9-5.el6_9.1.i686.rpm
-	TOOLSET4=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-devel-1.3.9-5.el6_9.1.i686.rpm
-	TOOLSET5=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET6=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-devel-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET7=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-ldap-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET8=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-mysql-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET9=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-odbc-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET10=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-pgsql-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET11=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-sqlite-1.3.9-3.el6_0.1.i686.rpm
-	TOOLSET12=https://vault.centos.org/centos/6.10/os/i386/Packages/atk-1.30.0-1.el6.i686.rpm
-	TOOLSET13=https://vault.centos.org/centos/6.10/os/i386/Packages/atk-devel-1.30.0-1.el6.i686.rpm
-	TOOLSET14=https://vault.centos.org/centos/6.10/os/i386/Packages/attr-2.4.44-7.el6.i686.rpm
-	TOOLSET15=https://vault.centos.org/centos/6.10/os/i386/Packages/autoconf-2.63-5.1.el6.noarch.rpm
-	TOOLSET16=https://vault.centos.org/centos/6.10/os/i386/Packages/automake-1.11.1-4.el6.noarch.rpm
-	TOOLSET17=https://vault.centos.org/centos/6.10/os/i386/Packages/basesystem-10.0-4.el6.noarch.rpm
-	TOOLSET18=https://vault.centos.org/centos/6.10/os/i386/Packages/bash-4.1.2-48.el6.i686.rpm
-	TOOLSET19=https://vault.centos.org/centos/6.10/updates/i386/Packages/binutils-2.20.51.0.2-5.48.el6_10.1.i686.rpm
-	TOOLSET20=https://vault.centos.org/centos/6.10/updates/i386/Packages/binutils-devel-2.20.51.0.2-5.48.el6_10.1.i686.rpm	
-	TOOLSET21=https://vault.centos.org/centos/6.10/os/i386/Packages/bison-2.4.1-5.el6.i686.rpm
-	TOOLSET22=https://vault.centos.org/centos/6.10/os/i386/Packages/bison-devel-2.4.1-5.el6.i686.rpm
-	TOOLSET23=https://vault.centos.org/centos/6.10/os/i386/Packages/bison-runtime-2.4.1-5.el6.i686.rpm
-	TOOLSET24=https://vault.centos.org/centos/6.10/os/i386/Packages/byacc-1.9.20070509-7.el6.i686.rpm
+	#TOOLSET1=https://vault.centos.org/centos/6.10/os/i386/Packages/alsa-lib-1.1.0-4.el6.i686.rpm
+	#TOOLSET2=https://vault.centos.org/centos/6.10/os/i386/Packages/alsa-lib-devel-1.1.0-4.el6.i686.rpm
+	#TOOLSET3=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-1.3.9-5.el6_9.1.i686.rpm
+	#TOOLSET4=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-devel-1.3.9-5.el6_9.1.i686.rpm
+	#TOOLSET5=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET6=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-devel-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET7=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-ldap-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET8=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-mysql-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET9=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-odbc-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET10=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-pgsql-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET11=https://vault.centos.org/centos/6.10/os/i386/Packages/apr-util-sqlite-1.3.9-3.el6_0.1.i686.rpm
+	#TOOLSET12=https://vault.centos.org/centos/6.10/os/i386/Packages/atk-1.30.0-1.el6.i686.rpm
+	#TOOLSET13=https://vault.centos.org/centos/6.10/os/i386/Packages/atk-devel-1.30.0-1.el6.i686.rpm
+	#TOOLSET14=https://vault.centos.org/centos/6.10/os/i386/Packages/attr-2.4.44-7.el6.i686.rpm
+	#TOOLSET15=https://vault.centos.org/centos/6.10/os/i386/Packages/autoconf-2.63-5.1.el6.noarch.rpm
+	#TOOLSET16=https://vault.centos.org/centos/6.10/os/i386/Packages/automake-1.11.1-4.el6.noarch.rpm
+	#TOOLSET17=https://vault.centos.org/centos/6.10/os/i386/Packages/basesystem-10.0-4.el6.noarch.rpm
+	#TOOLSET18=https://vault.centos.org/centos/6.10/os/i386/Packages/bash-4.1.2-48.el6.i686.rpm
+	#TOOLSET19=https://vault.centos.org/centos/6.10/updates/i386/Packages/binutils-2.20.51.0.2-5.48.el6_10.1.i686.rpm
+	#TOOLSET20=https://vault.centos.org/centos/6.10/updates/i386/Packages/binutils-devel-2.20.51.0.2-5.48.el6_10.1.i686.rpm	
+	#TOOLSET21=https://vault.centos.org/centos/6.10/os/i386/Packages/bison-2.4.1-5.el6.i686.rpm
+	#TOOLSET22=https://vault.centos.org/centos/6.10/os/i386/Packages/bison-devel-2.4.1-5.el6.i686.rpm
+	#TOOLSET23=https://vault.centos.org/centos/6.10/os/i386/Packages/bison-runtime-2.4.1-5.el6.i686.rpm
+	#TOOLSET24=https://vault.centos.org/centos/6.10/os/i386/Packages/byacc-1.9.20070509-7.el6.i686.rpm
 	TOOLSET25=https://vault.centos.org/centos/6.10/os/i386/Packages/cairo-1.8.8-6.el6_6.i686.rpm
 	TOOLSET26=https://vault.centos.org/centos/6.10/os/i386/Packages/cairomm-1.8.0-2.1.el6.i686.rpm
 	TOOLSET27=https://vault.centos.org/centos/6.10/os/i386/Packages/cairomm-devel-1.8.0-2.1.el6.i686.rpm
@@ -334,7 +336,8 @@ else
 	TOOLSET209=https://vault.centos.org/centos/6.10/os/i386/Packages/libxcb-python-1.12-4.el6.i686.rpm
 	TOOLSET210=https://vault.centos.org/centos/6.10/os/i386/Packages/m4-1.4.13-5.el6.i686.rpm
 	TOOLSET211=https://vault.centos.org/centos/6.10/os/i386/Packages/mailcap-2.1.31-2.el6.noarch.rpm
-    TOOLSET212=https://vault.centos.org/centos/6.10/os/i386/Packages/make-3.81-23.el6.i686.rpm
+    #TOOLSET212=https://vault.centos.org/centos/6.10/os/i386/Packages/make-3.81-23.el6.i686.rpm
+    TOOLSET1=https://vault.centos.org/centos/6.10/os/i386/Packages/make-3.81-23.el6.i686.rpm
 	TOOLSET213=https://vault.centos.org/centos/6.10/os/i386/Packages/mpfr-2.4.1-6.el6.i686.rpm
 	TOOLSET214=https://vault.centos.org/centos/6.10/os/i386/Packages/mpfr-devel-2.4.1-6.el6.i686.rpm
 	TOOLSET215=https://vault.centos.org/centos/6.10/os/i386/Packages/neon-0.29.3-3.el6_4.i686.rpm
@@ -435,7 +438,8 @@ else
 	TOOLSET310=https://vault.centos.org/centos/6.10/os/i386/Packages/xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.i686.rpm
 	TOOLSET311=https://vault.centos.org/centos/6.10/os/i386/Packages/zip-3.0-1.el6_7.1.i686.rpm
 	TOOLSET312=https://vault.centos.org/centos/6.10/os/i386/Packages/zlib-1.2.3-29.el6.i686.rpm	
-	TOOLSET_MAX=312
+	TOOLSET_MAX=1
+	GCCBOOTRAPURL=https://sourceforge.net/projects/gcc-precompiled/files/gcc-i386-linux-8.5.0.tar.xz
 fi
 JOBS=$(nproc)
 
@@ -609,153 +613,22 @@ for i in $(seq 1 "$TOOLSET_MAX"); do
 		rm -f "$RPM_NAME" "$CPIO_NAME"
 	fi
 done
-#exit
-#bash-4.1# ls gcc-4.4.7-portable/lib
-#cpp			 libasound.so.2      libcap.so.2       libfreeblpriv3.chk	     libnsl-2.12.so	    libnss_files.so.2	    libpthread-2.12.so	 libutil-2.12.so
-#firmware		 libasound.so.2.0.0  libcap.so.2.16    libfreeblpriv3.so	     libnsl.so.1	    libnss_hesiod-2.12.so   libpthread.so.0	 libutil.so.1
-#i686			 libattr.so	     libcidn-2.12.so   libgcc_s-4.4.7-20120601.so.1  libnspr4.so	    libnss_hesiod.so.2	    libresolv-2.12.so	 libz.so.1
-#ld-2.12.so		 libattr.so.1	     libcidn.so.1      libgcc_s.so.1		     libnss_compat-2.12.so  libnss_ldap.so.2	    libresolv.so.2	 libz.so.1.2.3
-#ld-linux.so.2		 libattr.so.1.1.0    libcrypt-2.12.so  libm-2.12.so		     libnss_compat.so.2     libnss_nis-2.12.so	    librt-2.12.so	 modules
-#libBrokenLocale-2.12.so  libc-2.12.so	     libcrypt.so.1     libm.so.6		     libnss_db-2.2.3.so     libnss_nis.so.2	    librt.so.1		 rtkaio
-#libBrokenLocale.so.1	 libc.so.6	     libdl-2.12.so     libncurses.so.5		     libnss_db.so.2	    libnss_nisplus-2.12.so  libthread_db-1.0.so  security
-#libSegFault.so		 libcap-ng.so.0      libdl.so.2        libncurses.so.5.7	     libnss_dns-2.12.so     libnss_nisplus.so.2     libthread_db.so.1	 terminfo
-#libanl-2.12.so		 libcap-ng.so.0.0.0  libfreebl3.chk    libncursesw.so.5		     libnss_dns.so.2	    libplc4.so		    libtinfo.so.5	 udev
-#libanl.so.1		 libcap.so	     libfreebl3.so     libncursesw.so.5.7	     libnss_files-2.12.so   libplds4.so		    libtinfo.so.5.7
-#
-#bash-4.1# ls gcc-4.4.7-portable/lib64
-#ld-2.12.so		 libattr.so.1	     libcidn.so.1		   libgcc_s.so.1       libnss_compat-2.12.so  libnss_ldap.so.2	      libresolv.so.2	   libz.so.1.2.3
-#ld-linux-x86-64.so.2	 libattr.so.1.1.0    libcrypt-2.12.so		   libm-2.12.so        libnss_compat.so.2     libnss_nis-2.12.so      librt-2.12.so	   rtkaio
-#libBrokenLocale-2.12.so  libc-2.12.so	     libcrypt.so.1		   libm.so.6	       libnss_db-2.2.3.so     libnss_nis.so.2	      librt.so.1	   security
-#libBrokenLocale.so.1	 libc.so.6	     libdl-2.12.so		   libncurses.so.5     libnss_db.so.2	      libnss_nisplus-2.12.so  libthread_db-1.0.so  tls
-#libSegFault.so		 libcap-ng.so.0      libdl.so.2			   libncurses.so.5.7   libnss_dns-2.12.so     libnss_nisplus.so.2     libthread_db.so.1
-#libanl-2.12.so		 libcap-ng.so.0.0.0  libfreebl3.chk		   libncursesw.so.5    libnss_dns.so.2	      libplc4.so	      libtinfo.so.5
-#libanl.so.1		 libcap.so	     libfreebl3.so		   libncursesw.so.5.7  libnss_files-2.12.so   libplds4.so	      libtinfo.so.5.7
-#libasound.so.2		 libcap.so.2	     libfreeblpriv3.chk		   libnsl-2.12.so      libnss_files.so.2      libpthread-2.12.so      libutil-2.12.so
-#libasound.so.2.0.0	 libcap.so.2.16      libfreeblpriv3.so		   libnsl.so.1	       libnss_hesiod-2.12.so  libpthread.so.0	      libutil.so.1
-#libattr.so		 libcidn-2.12.so     libgcc_s-4.4.7-20120601.so.1  libnspr4.so	       libnss_hesiod.so.2     libresolv-2.12.so       libz.so.1
+
+GCCBOOTRAP_NAME="${GCCBOOTRAPURL##*/}"
+downloaddirectory $GCCBOOTRAPURL $GCCBOOTRAP_NAME
+GCCBOOTRAP_TAR="${GCCBOOTRAP_NAME%.xz}"
+"$PREFIX/bin/7z" x -aoa "$GCCBOOTRAP_NAME"
+"$PREFIX/bin/7z" x -aoa "$GCCBOOTRAP_TAR"
+rm -f $GCCBOOTRAP_NAME $GCCBOOTRAP_TAR
 
 
-rm -f "$GCC447/usr/$LIBDIR/libasound.so.2"
-ln -s "$GCC447/usr/$LIBDIR/libasound.so.2.0.0" "$GCC447/usr/$LIBDIR2/libasound.so.2"
-rm -f "$GCC447/usr/$LIBDIR2/libasound.so.2"
-ln -s "$GCC447/usr/$LIBDIR2/libasound.so.2.0.0" "$GCC447/usr/$LIBDIR2/libasound.so.2"
-rm -f "$GCC447/usr/$LIBDIR/libattr.so"
-ln -s "$GCC447/usr/$LIBDIR/libattr.so.1.1.0" "$GCC447/usr/$LIBDIR/libattr.so"
-rm -f "$GCC447/usr/$LIBDIR2/libattr.so"
-ln -s "$GCC447/usr/$LIBDIR2/libattr.so.1.1.0" "$GCC447/usr/$LIBDIR2/libattr.so"
-rm -f "$GCC447/usr/$LIBDIR/libattr.so.1"
-ln -s "$GCC447/usr/$LIBDIR/libattr.so.1.1.0" "$GCC447/usr/$LIBDIR/libattr.so.1"
-rm -f "$GCC447/usr/$LIBDIR2/libattr.so.1"
-ln -s "$GCC447/usr/$LIBDIR2/libattr.so.1.1.0" "$GCC447/usr/$LIBDIR2/libattr.so.1"
-rm -f "$GCC447/usr/$LIBDIR/libc.so.6"
-ln -s "$GCC447/usr/$LIBDIR/libc-2.12.so" "$GCC447/usr/$LIBDIR/libc.so.6"
-rm -f "$GCC447/usr/$LIBDIR2/libc.so.6"
-ln -s "$GCC447/usr/$LIBDIR2/libc-2.12.so" "$GCC447/usr/$LIBDIR2/libc.so.6"
-rm -f "$GCC447/usr/$LIBDIR/libcap-ng.so.0"
-ln -s "$GCC447/usr/$LIBDIR/libcap-ng.so.0.0.0" "$GCC447/usr/$LIBDIR/libcap-ng.so.0"
-rm -f "$GCC447/usr/$LIBDIR2/libcap-ng.so.0"
-ln -s "$GCC447/usr/$LIBDIR2/libcap-ng.so.0.0.0" "$GCC447/usr/$LIBDIR2/libcap-ng.so.0"
-rm -f "$GCC447/usr/$LIBDIR/libcap.so"
-ln -s "$GCC447/usr/$LIBDIR/libcap.so.2.16" "$GCC447/usr/$LIBDIR/libcap.so"
-rm -f "$GCC447/usr/$LIBDIR2/libcap.so"
-ln -s "$GCC447/usr/$LIBDIR2/libcap.so.2.16" "$GCC447/usr/$LIBDIR2/libcap.so"
-rm -f "$GCC447/usr/$LIBDIR/libcap.so.2"
-ln -s "$GCC447/usr/$LIBDIR/libcap.so.2.16" "$GCC447/usr/$LIBDIR/libcap.so.2"
-rm -f "$GCC447/usr/$LIBDIR2/libcap.so.2"
-ln -s "$GCC447/usr/$LIBDIR2/libcap.so.2.16" "$GCC447/usr/$LIBDIR2/libcap.so.2"
-rm -f "$GCC447/usr/$LIBDIR/libcidn.so.1"
-ln -s "$GCC447/usr/$LIBDIR/libcidn-2.12.so" "$GCC447/usr/$LIBDIR/libcidn.so.1"
-rm -f "$GCC447/usr/$LIBDIR2/libcidn.so.1"
-ln -s "$GCC447/usr/$LIBDIR2/libcidn-2.12.so" "$GCC447/usr/$LIBDIR2/libcidn.so.1"
-rm -f "$GCC447/usr/$LIBDIR/libcrypt.so.1"
-ln -s "$GCC447/usr/$LIBDIR/libcrypt-2.12.so" "$GCC447/usr/$LIBDIR/libcrypt.so.1"
-rm -f "$GCC447/usr/$LIBDIR2/libcrypt.so.1"
-ln -s "$GCC447/usr/$LIBDIR2/libcrypt-2.12.so" "$GCC447/usr/$LIBDIR2/libcrypt.so.1"
-rm -f "$GCC447/usr/$LIBDIR/libmpfr.so.1"
-ln -s "$GCC447/usr/$LIBDIR/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR/libmpfr.so.1"
-rm -f "$GCC447/usr/$LIBDIR/libopcodes.so"
-ln -s "$GCC447/usr/$LIBDIR/libopcodes-2.20.51.0.2-5.48.el6_10.1.so" "$GCC447/usr/$LIBDIR/libopcodes.so"
-rm -f "$GCC447/usr/$LIBDIR/libstdc++.so.6"
-ln -s "$GCC447/usr/$LIBDIR/libstdc++.so.6.0.13" "$GCC447/usr/$LIBDIR/libstdc++.so.6"
-rm -f "$GCC447/usr/$LIBDIR/libmp.so.3"
-ln -s "$GCC447/usr/$LIBDIR/libmp.so.3.1.14" "$GCC447/usr/$LIBDIR/libmp.so.3"
-rm -f "$GCC447/usr/$LIBDIR/libmpc.so"
-ln -s "$GCC447/usr/$LIBDIR/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR/libmpc.so"
-rm -f "$GCC447/usr/$LIBDIR/libmpc.so.2"
-ln -s "$GCC447/usr/$LIBDIR/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR/libmpc.so.2"
-rm -f "$GCC447/usr/$LIBDIR/libmpfr.so"
-ln -s "$GCC447/usr/$LIBDIR/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR/libmpfr.so"
-rm -f "$GCC447/usr/$LIBDIR/libmpfr.so.1"
-ln -s "$GCC447/usr/$LIBDIR/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR/libmpfr.so.1"
-rm -f "$GCC447/usr/$LIBDIR/libopcodes.so"
-ln -s "$GCC447/usr/$LIBDIR/libopcodes-2.20.51.0.2-5.48.el6_10.1.so" "$GCC447/usr/$LIBDIR/libopcodes.so"
-rm -f "$GCC447/usr/$LIBDIR/libstdc++.so.6"
-ln -s "$GCC447/usr/$LIBDIR/libstdc++.so.6.0.13" "$GCC447/usr/$LIBDIR/libstdc++.so.6"
-rm -f "$GCC447/usr/$LIBDIR/libmp.so.3"
-ln -s "$GCC447/usr/$LIBDIR/libmp.so.3.1.14" "$GCC447/usr/$LIBDIR/libmp.so.3"
-rm -f "$GCC447/usr/$LIBDIR/libmpc.so"
-ln -s "$GCC447/usr/$LIBDIR/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR/libmpc.so"
-rm -f "$GCC447/usr/$LIBDIR/libmpc.so.2"
-ln -s "$GCC447/usr/$LIBDIR/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR/libmpc.so.2"
-rm -f "$GCC447/usr/$LIBDIR/libmpfr.so"
-ln -s "$GCC447/usr/$LIBDIR/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR/libmpfr.so"
-rm -f "$GCC447/usr/$LIBDIR/libmpfr.so.1"
-ln -s "$GCC447/usr/$LIBDIR/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR/libmpfr.so.1"
-rm -f "$GCC447/usr/$LIBDIR/libopcodes.so"
-ln -s "$GCC447/usr/$LIBDIR/libopcodes-2.20.51.0.2-5.48.el6_10.1.so" "$GCC447/usr/$LIBDIR/libopcodes.so"
-rm -f "$GCC447/usr/$LIBDIR/libstdc++.so.6"
-ln -s "$GCC447/usr/$LIBDIR/libstdc++.so.6.0.13" "$GCC447/usr/$LIBDIR/libstdc++.so.6"
-rm -f "$GCC447/usr/$LIBDIR2/libmpfr.so.1"
-ln -s "$GCC447/usr/$LIBDIR2/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR2/libmpfr.so.1"
-rm -f "$GCC447/usr/$LIBDIR2/libopcodes.so"
-ln -s "$GCC447/usr/$LIBDIR2/libopcodes-2.20.51.0.2-5.48.el6_10.1.so" "$GCC447/usr/$LIBDIR2/libopcodes.so"
-rm -f "$GCC447/usr/$LIBDIR2/libstdc++.so.6"
-ln -s "$GCC447/usr/$LIBDIR2/libstdc++.so.6.0.13" "$GCC447/usr/$LIBDIR2/libstdc++.so.6"
-rm -f "$GCC447/usr/$LIBDIR2/libmp.so.3"
-ln -s "$GCC447/usr/$LIBDIR2/libmp.so.3.1.14" "$GCC447/usr/$LIBDIR2/libmp.so.3"
-rm -f "$GCC447/usr/$LIBDIR2/libmpc.so"
-ln -s "$GCC447/usr/$LIBDIR2/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR2/libmpc.so"
-rm -f "$GCC447/usr/$LIBDIR2/libmpc.so.2"
-ln -s "$GCC447/usr/$LIBDIR2/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR2/libmpc.so.2"
-rm -f "$GCC447/usr/$LIBDIR2/libmpfr.so"
-ln -s "$GCC447/usr/$LIBDIR2/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR2/libmpfr.so"
-rm -f "$GCC447/usr/$LIBDIR2/libmpfr.so.1"
-ln -s "$GCC447/usr/$LIBDIR2/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR2/libmpfr.so.1"
-rm -f "$GCC447/usr/$LIBDIR2/libopcodes.so"
-ln -s "$GCC447/usr/$LIBDIR2/libopcodes-2.20.51.0.2-5.48.el6_10.1.so" "$GCC447/usr/$LIBDIR2/libopcodes.so"
-rm -f "$GCC447/usr/$LIBDIR2/libstdc++.so.6"
-ln -s "$GCC447/usr/$LIBDIR2/libstdc++.so.6.0.13" "$GCC447/usr/$LIBDIR2/libstdc++.so.6"
-rm -f "$GCC447/usr/$LIBDIR2/libmp.so.3"
-ln -s "$GCC447/usr/$LIBDIR2/libmp.so.3.1.14" "$GCC447/usr/$LIBDIR2/libmp.so.3"
-rm -f "$GCC447/usr/$LIBDIR2/libmpc.so"
-ln -s "$GCC447/usr/$LIBDIR2/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR2/libmpc.so"
-rm -f "$GCC447/usr/$LIBDIR2/libmpc.so.2"
-ln -s "$GCC447/usr/$LIBDIR2/libmpc.so.2.0.0" "$GCC447/usr/$LIBDIR2/libmpc.so.2"
-rm -f "$GCC447/usr/$LIBDIR2/libmpfr.so"
-ln -s "$GCC447/usr/$LIBDIR2/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR2/libmpfr.so"
-rm -f "$GCC447/usr/$LIBDIR2/libmpfr.so.1"
-ln -s "$GCC447/usr/$LIBDIR2/libmpfr.so.1.2.0" "$GCC447/usr/$LIBDIR2/libmpfr.so.1"
-rm -f "$GCC447/usr/$LIBDIR2/libopcodes.so"
-ln -s "$GCC447/usr/$LIBDIR2/libopcodes-2.20.51.0.2-5.48.el6_10.1.so" "$GCC447/usr/$LIBDIR2/libopcodes.so"
-rm -f "$GCC447/usr/$LIBDIR2/libstdc++.so.6"
-ln -s "$GCC447/usr/$LIBDIR2/libstdc++.so.6.0.13" "$GCC447/usr/$LIBDIR2/libstdc++.so.6"
-rm -f "$GCC447/usr/$LIBDIR/libssl.so"
-ln -s "$GCC447/usr/$LIBDIR/libssl.so.1.0.1e" "$GCC447/usr/$LIBDIR2/libssl.so"
-rm -f "$GCC447/usr/$LIBDIR2/libssl.so"
-ln -s "$GCC447/usr/$LIBDIR2/libssl.so.1.0.1e" "$GCC447/usr/$LIBDIR2/libssl.so"
-rm -f "$GCC447/usr/$LIBDIR/libssl.so.10"
-ln -s "$GCC447/usr/$LIBDIR/libssl.so.1.0.1e" "$GCC447/usr/$LIBDIR2/libssl.so.10"
-rm -f "$GCC447/usr/$LIBDIR2/libssl.so.10"
-ln -s "$GCC447/usr/$LIBDIR2/libssl.so.1.0.1e" "$GCC447/usr/$LIBDIR2/libssl.so.10"
-
-
-#export PATH=$PATH:$GCC447/usr/bin:$GCC447/usr/sbin:$GCC447/sbin:$GCC447/bin
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$GCC447/usr/$LIBDIR"
-#export CPATH="$CPATH:$GCC447/usr/include"
-#export LIBRARY_PATH="$LIBRARY_PATH:$GCC447/usr/$LIBDIR"
-#export CPATH="$CPATH:$GCC447/usr/include"
-#export C_INCLUDE_PATH="$C_INCLUDE_PATH:$GCC447/usr/include"
-#export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$GCC447/usr/include"
+export PATH=$PATH:$GCC447/usr/bin:$GCC447/usr/sbin:$GCC447/sbin:$GCC447/bin
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$GCC447/usr/$LIBDIR"
+export CPATH="$CPATH:$GCC447/usr/include"
+export LIBRARY_PATH="$LIBRARY_PATH:$GCC447/usr/$LIBDIR"
+export CPATH="$CPATH:$GCC447/usr/include"
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:$GCC447/usr/include"
+export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$GCC447/usr/include"
 export CC="$GCC447/usr/bin/gcc"
 export CXX="$GCC447/usr/bin/g++"
 find "$GCC447/usr/bin" "$GCC447/usr/sbin" "$GCC447/sbin" "$GCC447/usr/libexec" -type f -exec chmod +x {} \; 2>/dev/null
