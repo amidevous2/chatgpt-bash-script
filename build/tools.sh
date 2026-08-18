@@ -629,6 +629,6 @@ export LIBRARY_PATH="$LIBRARY_PATH:$GCC447/usr/$LIBDIR"
 export CPATH="$CPATH:$GCC447/usr/include"
 export C_INCLUDE_PATH="$C_INCLUDE_PATH:$GCC447/usr/include"
 export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$GCC447/usr/include"
-export CC="$GCC447/usr/bin/gcc"
-export CXX="$GCC447/usr/bin/g++"
+export CC="$GCC447/bin/gcc"
+export CXX="$GCC447/bin/g++"
 find "$GCC447/usr/bin" "$GCC447/sbin" "$GCC447/bin" -type f -exec chmod +x {} \; 2>/dev/null
