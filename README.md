@@ -14,8 +14,10 @@ eval "$($DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/re
 
 
 
-eval "$($DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 42)"
+$DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" > podman-build.sh && chmod +x podman-build.sh && ./podman-build.sh --distribution Fedora --version 42
 
-eval "$($DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" | bash -s -- --distribution Fedora --version 43)"
+$DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" > podman-build.sh && chmod +x podman-build.sh && ./podman-build.sh --distribution Fedora --version 43
+
+$DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$COMMIT/podman/podman-build.sh" > podman-build.sh && chmod +x podman-build.sh && ./podman-build.sh --distribution CentOS --version 6
 
 ```
