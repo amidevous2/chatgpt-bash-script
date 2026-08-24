@@ -12,3 +12,6 @@ RUN yum install -y https://rpms.remirepo.net/enterprise/remi-release-6.rpm
 RUN yum clean all
 
 CMD ["/bin/bash"]
+
+
+
