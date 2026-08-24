@@ -5,7 +5,6 @@ RUN yum -y update
 RUN yum -y install bash curl wget @core
 RUN yum -y install epel-release
 RUN yum -y update
-RUN yum -y install update
 RUN yum -y install https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-6.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm
 RUN yum -y install update
 RUN yum install -y https://rpms.remirepo.net/enterprise/remi-release-6.rpm
