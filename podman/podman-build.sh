@@ -70,7 +70,7 @@ podman system prune -a -f --volumes
 if [ -f "$HOME/podman-template/$TEMPLATE" ]; then
     echo "Template trouvé : $TEMPLATE"
     echo "Chargement du template..."
-    xz -dc "$HOME/podman-template/$TEMPLATE" | podman $ARCH load
+    xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
     echo "Template chargé."
     echo "Lancement de $IMAGE_NAME..."
     podman $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
@@ -93,7 +93,7 @@ else
     mkdir -p "$HOME/podman-template/"
 
     echo "Sauvegarde de l'image..."
-    podman $ARCH save --output "/tmp/${TEMPLATE%.xz}" "localhost/$IMAGE_NAME"
+    podman save --output "/tmp/${TEMPLATE%.xz}" "localhost/$IMAGE_NAME"
     xz -T0 -9 "/tmp/${TEMPLATE%.xz}"
     mv "/tmp/$TEMPLATE" "$HOME/podman-template/$TEMPLATE"
     echo "sauvegarde TERMINÉ"
@@ -108,10 +108,7 @@ else
     podman system prune -a -f --volumes
 
     echo "Rechargement du template..."
-    cp "$HOME/podman-template/$TEMPLATE" "$HOME/podman-template/$TEMPLATE.save"
-    xz -d "$HOME/podman-template/$TEMPLATE"
-    podman $ARCH load -i "${HOME}/podman-template/${TEMPLATE%.xz}"
-    mv "$HOME/podman-template/$TEMPLATE.save" "$HOME/podman-template/$TEMPLATE"
+    xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
 
     echo "Template rechargé."
     echo "Lancement de $IMAGE_NAME..."
