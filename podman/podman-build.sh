@@ -45,7 +45,7 @@ fi
 
 
 if [ -z "$ARCHITECTURE" ]; then
-    ARCH=--platform=linux/amd64
+    ARCH="--platform=linux/amd64"
     DOCKERFILE="$DISTRIBUTION-$VERSION.Dockerfile"
     TEMPLATE="$DISTRIBUTION-$VERSION.tar.xz"
     IMAGE_NAME="${DISTRIBUTION,,}${VERSION}"
@@ -53,7 +53,7 @@ else
     DOCKERFILE="$DISTRIBUTION-$VERSION-$ARCHITECTURE.Dockerfile"
     TEMPLATE="$DISTRIBUTION-$VERSION-$ARCHITECTURE.tar.xz"
     IMAGE_NAME="${DISTRIBUTION,,}${VERSION}${ARCHITECTURE}"
-    ARCH=--platform=linux/i386
+    ARCH="--platform=linux/i386"
 fi
 
 
@@ -73,7 +73,7 @@ if [ -f "$HOME/podman-template/$TEMPLATE" ]; then
     xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
     echo "Template chargé."
     echo "Lancement de $IMAGE_NAME..."
-    podman $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
+    podman run --rm  $ARCH -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
 else
     echo "Template absent : $TEMPLATE"
     echo "Téléchargement du Dockerfile..."
@@ -112,7 +112,7 @@ else
 
     echo "Template rechargé."
     echo "Lancement de $IMAGE_NAME..."
-    podman $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
+    podman run --rm  $ARCH -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
 fi
 
 
