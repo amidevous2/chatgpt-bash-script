@@ -45,7 +45,7 @@ fi
 
 
 if [ -z "$ARCHITECTURE" ]; then
-    ARCH=x86-64
+    ARCH=--platform=linux/amd64
     DOCKERFILE="$DISTRIBUTION-$VERSION.Dockerfile"
     TEMPLATE="$DISTRIBUTION-$VERSION.tar.xz"
     IMAGE_NAME="${DISTRIBUTION,,}${VERSION}"
@@ -53,7 +53,7 @@ else
     DOCKERFILE="$DISTRIBUTION-$VERSION-$ARCHITECTURE.Dockerfile"
     TEMPLATE="$DISTRIBUTION-$VERSION-$ARCHITECTURE.tar.xz"
     IMAGE_NAME="${DISTRIBUTION,,}${VERSION}${ARCHITECTURE}"
-    ARCH=${ARCHITECTURE}
+    ARCH=--platform=linux/i386
 fi
 
 
@@ -70,10 +70,10 @@ podman system prune -a -f --volumes
 if [ -f "$HOME/podman-template/$TEMPLATE" ]; then
     echo "Template trouvé : $TEMPLATE"
     echo "Chargement du template..."
-    xz -dc "$HOME/podman-template/$TEMPLATE" | podman load
+    xz -dc "$HOME/podman-template/$TEMPLATE" | podman $ARCH load
     echo "Template chargé."
     echo "Lancement de $IMAGE_NAME..."
-    podman --arch $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
+    podman $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
 else
     echo "Template absent : $TEMPLATE"
     echo "Téléchargement du Dockerfile..."
@@ -87,13 +87,13 @@ else
     chmod 777 "$DOCKERFILE"
 
     echo "Construction de $IMAGE_NAME..."
-    podman --arch $ARCH  build -t "$IMAGE_NAME" -f "$DOCKERFILE" . </dev/tty
+    podman $ARCH  build -t "$IMAGE_NAME" -f "$DOCKERFILE" . </dev/tty
     echo "BUILD TERMINÉ"
 
     mkdir -p "$HOME/podman-template/"
 
     echo "Sauvegarde de l'image..."
-    podman --arch $ARCH save --output "/tmp/${TEMPLATE%.xz}" "localhost/$IMAGE_NAME"
+    podman $ARCH save --output "/tmp/${TEMPLATE%.xz}" "localhost/$IMAGE_NAME"
     xz -T0 -9 "/tmp/${TEMPLATE%.xz}"
     mv "/tmp/$TEMPLATE" "$HOME/podman-template/$TEMPLATE"
     echo "sauvegarde TERMINÉ"
@@ -110,12 +110,12 @@ else
     echo "Rechargement du template..."
     cp "$HOME/podman-template/$TEMPLATE" "$HOME/podman-template/$TEMPLATE.save"
     xz -d "$HOME/podman-template/$TEMPLATE"
-    podman --arch $ARCH load -i "${HOME}/podman-template/${TEMPLATE%.xz}"
+    podman $ARCH load -i "${HOME}/podman-template/${TEMPLATE%.xz}"
     mv "$HOME/podman-template/$TEMPLATE.save" "$HOME/podman-template/$TEMPLATE"
 
     echo "Template rechargé."
     echo "Lancement de $IMAGE_NAME..."
-    podman --arch $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
+    podman $ARCH run --rm -it "localhost/$IMAGE_NAME:latest" /bin/bash < /dev/tty
 fi
 
 
