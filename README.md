@@ -8,7 +8,7 @@ ensure_os.sh usage
 if command -v curl >/dev/null 2>&1; then DL="curl --insecure -fsSL"; else DL="wget --no-check-certificate -qO-"; fi
 #JQ_VERSION=1.6; $DL "https://github.com/jqlang/jq/releases/download/jq-$JQ_VERSION/jq-$([ "$ARCH" = x86_64 ] && echo linux64 || echo linux32)" > "./jq"; chmod 755 "./jq"
 #COMMIT=$($DL "https://api.github.com/repos/amidevous2/chatgpt-bash-script/commits/main" | ./jq -r .sha && rm -f ./jq)
-CBSCOMMIT="7efdedef07e189cb12acef1c1aca206b870ef8fb"
+CBSCOMMIT="4123316901fc74681e0deb2df7e2d333cb6e894c"
 eval "$($DL "https://raw.githubusercontent.com/amidevous2/chatgpt-bash-script/$CBSCOMMIT/ensure_os.sh")"
 
 
