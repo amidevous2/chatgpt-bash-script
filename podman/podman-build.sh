@@ -87,7 +87,7 @@ else
     chmod 777 "$DOCKERFILE"
 
     echo "Construction de $IMAGE_NAME..."
-    podman $ARCH  build -t "$IMAGE_NAME" -f "$DOCKERFILE" . </dev/tty
+    podman  build $ARCH -t "$IMAGE_NAME" -f "$DOCKERFILE" . </dev/tty
     echo "BUILD TERMINÉ"
 
     mkdir -p "$HOME/podman-template/"
