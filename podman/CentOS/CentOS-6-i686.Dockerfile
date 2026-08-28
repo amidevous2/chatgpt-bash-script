@@ -16,7 +16,13 @@ RUN yum -y update
 RUN cp /bin/uname /bin/uname.org
 RUN cat > /bin/uname <<EOF
 #!/bin/bash
-echo "uname"
+if [[ "$1" == "-m" ]]; then
+echo "i686"
+exit 0
+else
+/bin/uname.org '$@"
+exit 0
+fi
 EOF
 RUN chmod +x /bin/uname 
 RUN yum clean all
