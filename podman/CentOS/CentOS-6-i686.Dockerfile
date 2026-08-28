@@ -13,5 +13,11 @@ RUN yum -y update
 RUN yum install -y https://rpms.remirepo.net/archives/enterprise/6/remi/x86_64/remi-release-6.10-2.el6.remi.noarch.rpm
 RUN find /etc/yum.repos.d/ -type f -name "*.repo" -exec sed -i -e 's|$basearch|i386|g' {} +
 RUN yum -y update
+RUN cp /bin/uname /bin/uname.org
+RUN cat > /bin/uname <<EOF
+#!/bin/bash
+echo "uname"
+EOF
+RUN chmod +x /bin/uname 
 RUN yum clean all
 CMD ["/bin/bash"]
